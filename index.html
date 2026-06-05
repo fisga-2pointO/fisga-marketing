@@ -48,7 +48,7 @@ nav.on-dark .nav-logo-inv{filter:invert(1)}
 .nav-links a{font-family:var(--title);font-size:11px;font-weight:300;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:color 0.3s}
 nav.on-light .nav-links a{color:var(--mid)}
 nav.on-light .nav-links a:hover{color:var(--black)}
-nav.on-dark .nav-links a{color:rgba(255,255,255,0.45)}
+nav.on-dark .nav-links a{color:rgba(255,255,255,0.75)}
 nav.on-dark .nav-links a:hover{color:#fff}
 .nav-btn{background:var(--yellow) !important;color:var(--black) !important;padding:10px 22px;font-family:var(--title) !important;font-size:10px !important;font-weight:400 !important;letter-spacing:0.16em !important;cursor:none;border:none;transition:transform 0.2s,box-shadow 0.2s !important}
 .nav-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(235,252,114,0.35) !important}
@@ -98,15 +98,15 @@ nav.on-dark .nav-links a:hover{color:#fff}
 .story-bullets{list-style:none;padding:0;margin:0}.story-bullets li{padding-left:20px;position:relative;margin-bottom:8px}.story-bullets li::before{content:'—';position:absolute;left:0;color:var(--black);font-weight:400}
 .story-turn-hl{border-left:4px solid var(--yellow);padding-left:24px;font-size:clamp(26px,3.4vw,54px)}
 .story-progress{display:flex;flex-direction:column;gap:28px}
-.s-prog-item{display:flex;align-items:center;gap:14px;opacity:0.3;transition:opacity 0.4s;cursor:none}
+.s-prog-item{display:flex;align-items:center;gap:14px;opacity:0.55;transition:opacity 0.4s;cursor:none}
 .s-prog-item.active{opacity:1}.s-prog-item.active .s-prog-label{color:#fff;font-weight:600;font-size:20px}
-.s-prog-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);transition:background 0.3s;flex-shrink:0}
+.s-prog-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);transition:background 0.3s;flex-shrink:0}
 .s-prog-item.active .s-prog-dot{background:var(--yellow);box-shadow:0 0 0 3px rgba(235,252,114,0.3)}
-.s-prog-line{flex:1;height:2px;background:rgba(255,255,255,0.12);position:relative;overflow:hidden}
+.s-prog-line{flex:1;height:2px;background:rgba(255,255,255,0.25);position:relative;overflow:hidden}
 .s-prog-item.active .s-prog-line::after{content:'';position:absolute;top:0;left:0;height:100%;background:var(--yellow);animation:progLine 0.6s ease-out forwards;box-shadow:0 0 6px rgba(235,252,114,0.8)}
 @keyframes progLine{from{width:0}to{width:100%}}
 @keyframes scrollCue{0%{top:-100%}50%{top:0%}100%{top:100%}}
-.s-prog-label{font-family:var(--title);font-size:18px;letter-spacing:0.08em;color:rgba(255,255,255,0.35);text-transform:uppercase;width:180px;text-align:right;font-weight:300}
+.s-prog-label{font-family:var(--title);font-size:18px;letter-spacing:0.08em;color:rgba(255,255,255,0.65);text-transform:uppercase;width:180px;text-align:right;font-weight:300}
 
 /* WHAT FISGA DOES — very light gray */
 #what{background:var(--bg3);padding:120px 6vw}
@@ -153,10 +153,10 @@ nav.on-dark .nav-links a:hover{color:#fff}
 .type-card:hover{background:#2a2a2a}
 .type-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--yellow);transform:scaleY(0);transform-origin:bottom;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1)}
 .type-card:hover::before{transform:scaleY(1)}
-.tc-icon{width:36px;height:36px;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:24px;font-family:var(--title);font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4)}
+.tc-icon{width:36px;height:36px;border:1px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;margin-bottom:24px;font-family:var(--title);font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.7)}
 .type-card h3{font-family:var(--title);font-size:18px;font-weight:200;letter-spacing:0.02em;color:#fff;margin-bottom:10px;transition:color 0.3s}
 .type-card:hover h3{color:#fff}
-.type-card p{font-size:13px;font-weight:400;line-height:1.75;color:rgba(255,255,255,0.45)}
+.type-card p{font-size:13px;font-weight:400;line-height:1.75;color:rgba(255,255,255,0.7)}
 .tc-arrow{display:none}
 
 /* TESTIMONIALS — white */
@@ -227,14 +227,14 @@ nav.on-dark .nav-links a:hover{color:#fff}
 
 /* FOOTER */
 footer{background:var(--black);padding:80px 6vw 40px}
-.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:80px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:36px}
+.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:80px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:36px}
 .foot-logo{height:28px;width:auto;display:block;margin-bottom:20px}
-.foot-tag{font-size:13px;font-weight:300;line-height:1.7;color:rgba(255,255,255,0.7);max-width:260px}
-.foot-col h4{font-family:var(--title);font-size:9px;letter-spacing:0.3em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:18px}
-.foot-col a{font-size:13px;font-weight:300;color:rgba(255,255,255,0.65);text-decoration:none;display:block;margin-bottom:10px;transition:color 0.3s}
+.foot-tag{font-size:13px;font-weight:300;line-height:1.7;color:rgba(255,255,255,0.8);max-width:260px}
+.foot-col h4{font-family:var(--title);font-size:9px;letter-spacing:0.3em;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-bottom:18px}
+.foot-col a{font-size:13px;font-weight:300;color:rgba(255,255,255,0.8);text-decoration:none;display:block;margin-bottom:10px;transition:color 0.3s}
 .foot-col a:hover{color:#fff}
 .foot-bot{display:flex;justify-content:space-between;align-items:center}
-.foot-copy,.foot-us{font-family:var(--title);font-size:9px;letter-spacing:0.15em;color:rgba(255,255,255,0.5)}
+.foot-copy,.foot-us{font-family:var(--title);font-size:9px;letter-spacing:0.15em;color:rgba(255,255,255,0.65)}
 
 /* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s}
@@ -408,7 +408,7 @@ footer{background:var(--black);padding:80px 6vw 40px}
           <div id="storyProgressBar" style="width:100%;background:var(--yellow);height:0%;transition:height 0.3s ease;box-shadow:0 0 8px rgba(235,252,114,0.6)"></div>
         </div>
         <div style="padding:0 6vw">
-          <p class="sec-eye" style="margin-bottom:48px;color:rgba(255,255,255,0.45);font-size:13px;letter-spacing:0.25em">The Problem</p>
+          <p class="sec-eye" style="margin-bottom:48px;color:rgba(255,255,255,0.75);font-size:13px;letter-spacing:0.25em">The Problem</p>
           <div class="story-progress">
             <div class="s-prog-item active" id="sp1">
               <div class="s-prog-dot"></div>
