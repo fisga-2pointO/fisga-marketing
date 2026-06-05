@@ -83,7 +83,7 @@ nav.on-dark .nav-links a:hover{color:#fff}
 #story{background:#F7F7F4;position:relative;z-index:2}
 .story-pin-wrap{height:350vh;position:relative}
 .story-sticky{height:100vh;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
-.story-left{padding:0 6vw;display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(255,255,255,0.08);background:#0D1B2A}
+.story-left{padding:0 6vw;display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(255,255,255,0.08);background:#1a1a1a}
 .story-right{padding:0 6vw;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
 .story-chapter{position:absolute;top:50%;left:6vw;right:6vw;transform:translate3d(0,-50%,0);opacity:0;pointer-events:none;transition:opacity 0.6s ease,transform 0.6s cubic-bezier(0.16,1,0.3,1);backface-visibility:hidden}
 .story-chapter.active{opacity:1;pointer-events:auto;transform:translate3d(0,-50%,0)}
@@ -147,10 +147,10 @@ nav.on-dark .nav-links a:hover{color:#fff}
 .proof-src{font-family:var(--title);font-size:8px;letter-spacing:0.2em;color:rgba(0,0,0,0.2);text-transform:uppercase;border-top:1px solid var(--border);padding-top:16px}
 
 /* INSIGHT TYPES — light */
-#types{background:#0D1B2A;padding:120px 6vw;color:#fff}
+#types{background:#1a1a1a;padding:120px 6vw;color:#fff}
 .types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.08);margin-top:64px}
-.type-card{background:#111E2D;padding:44px 36px;position:relative;overflow:hidden;cursor:none;transition:background 0.3s}
-.type-card:hover{background:#162435}
+.type-card{background:#222;padding:44px 36px;position:relative;overflow:hidden;cursor:none;transition:background 0.3s}
+.type-card:hover{background:#2a2a2a}
 .type-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--yellow);transform:scaleY(0);transform-origin:bottom;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1)}
 .type-card:hover::before{transform:scaleY(1)}
 .tc-icon{width:36px;height:36px;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:24px;font-family:var(--title);font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4)}
@@ -255,9 +255,17 @@ footer{background:var(--black);padding:80px 6vw 40px}
   .pillars,.types-grid,.testi-grid,.team-grid,.conv-cards{grid-template-columns:1fr}
   .invest-inner{grid-template-columns:1fr}
   .foot-top{grid-template-columns:1fr 1fr;gap:40px}
-}
-@media(max-width:768px){
-  .story-sticky{grid-template-columns:1fr}.story-left{display:none}
+
+  /* Story — disable pin on tablet/mobile, show as vertical stack */
+  .story-pin-wrap{height:auto !important}
+  .story-sticky{position:relative !important;height:auto !important;grid-template-columns:1fr;top:auto !important}
+  .story-left{display:none}
+  .story-right{position:relative !important;height:auto;padding:60px 6vw}
+  .story-chapter{position:relative !important;top:auto !important;left:auto !important;right:auto !important;transform:none !important;opacity:1 !important;pointer-events:auto !important;padding:48px 0;border-bottom:1px solid var(--border)}
+  .story-chapter:last-child{border-bottom:none}
+  .story-chapter.above,.story-chapter.below{transform:none !important;opacity:1 !important}
+  .story-headline{font-size:clamp(32px,5vw,56px)}
+  .story-body{font-size:16px}
 }
 @media(max-width:768px){
   nav{padding:18px 24px}.nav-links li:not(:last-child){display:none}
@@ -277,14 +285,9 @@ footer{background:var(--black);padding:80px 6vw 40px}
   .btn-y,.btn-ghost-w{padding:14px 28px;font-size:11px;width:auto}
   .hero-scroll{bottom:24px}
 
-  /* Story — disable pin on mobile, show as vertical stack */
-  .story-pin-wrap{height:auto !important}
-  .story-sticky{position:relative !important;height:auto !important;grid-template-columns:1fr;top:auto !important}
-  .story-left{display:none}
-  .story-right{position:relative !important;height:auto;padding:60px 24px}
-  .story-chapter{position:relative !important;top:auto !important;left:auto !important;right:auto !important;transform:none !important;opacity:1 !important;pointer-events:auto !important;padding:40px 0;border-bottom:1px solid var(--border)}
-  .story-chapter:last-child{border-bottom:none}
-  .story-chapter.above,.story-chapter.below{transform:none !important;opacity:1 !important}
+  /* Story — further tighten on phone */
+  .story-right{padding:48px 24px}
+  .story-chapter{padding:36px 0}
   .story-headline{font-size:clamp(28px,7vw,40px)}
   .story-body{font-size:15px}
 
@@ -834,7 +837,7 @@ chapters.forEach((id,i)=>{
   else{el.classList.add('below');}
 });
 
-if(window.innerWidth > 768){
+if(window.innerWidth > 1024){
   ScrollTrigger.create({
     trigger:'#storyWrap',
     start:'top top',
