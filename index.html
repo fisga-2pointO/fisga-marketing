@@ -30,11 +30,8 @@ a{color:inherit;text-decoration:none}
   --body:'Plus Jakarta Sans',sans-serif;
 }
 html{scroll-behavior:auto}
-body{background:var(--bg);color:var(--black);font-family:var(--body);overflow-x:clip;cursor:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+body{background:var(--bg);color:var(--black);font-family:var(--body);overflow-x:clip;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
 
-/* CURSOR */
-.cur{width:6px;height:6px;background:#fff;border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference}
-.cur-ring{width:26px;height:26px;border:1.5px solid #fff;border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform 0.12s ease-out;mix-blend-mode:difference}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:22px 6vw;display:flex;justify-content:space-between;align-items:center;opacity:0;transition:opacity 0.5s,background 0.4s,border-color 0.4s;border-bottom:1px solid transparent}
@@ -50,7 +47,7 @@ nav.on-light .nav-links a{color:var(--mid)}
 nav.on-light .nav-links a:hover{color:var(--black)}
 nav.on-dark .nav-links a{color:rgba(255,255,255,0.75)}
 nav.on-dark .nav-links a:hover{color:#fff}
-.nav-btn{background:var(--yellow) !important;color:var(--black) !important;padding:10px 22px;font-family:var(--title) !important;font-size:10px !important;font-weight:400 !important;letter-spacing:0.16em !important;cursor:none;border:none;transition:transform 0.2s,box-shadow 0.2s !important}
+.nav-btn{background:var(--yellow) !important;color:var(--black) !important;padding:10px 22px;font-family:var(--title) !important;font-size:10px !important;font-weight:400 !important;letter-spacing:0.16em !important;border:none;transition:transform 0.2s,box-shadow 0.2s !important}
 .nav-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(235,252,114,0.35) !important}
 
 /* HERO — dark */
@@ -69,9 +66,9 @@ nav.on-dark .nav-links a:hover{color:#fff}
 .hero-h1 strong{font-weight:200;color:var(--yellow)}
 .hero-sub{font-family:var(--body);font-size:clamp(15px,1.4vw,18px);font-weight:400;line-height:1.85;color:rgba(255,255,255,0.9);max-width:500px;margin-top:28px}
 .hero-actions{display:flex;gap:12px;margin-top:48px}
-.btn-y{background:var(--yellow);color:var(--black);border:none;padding:15px 34px;font-family:var(--title);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;cursor:none;display:inline-block;transition:transform 0.2s,box-shadow 0.2s}
+.btn-y{background:var(--yellow);color:var(--black);border:none;padding:15px 34px;font-family:var(--title);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:transform 0.2s,box-shadow 0.2s}
 .btn-y:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(235,252,114,0.28)}
-.btn-ghost-w{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.8);padding:15px 34px;font-family:var(--title);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;cursor:none;display:inline-block;transition:border-color 0.3s,color 0.3s}
+.btn-ghost-w{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.8);padding:15px 34px;font-family:var(--title);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:border-color 0.3s,color 0.3s}
 .btn-ghost-w:hover{border-color:#fff;color:#fff;background:rgba(255,255,255,0.08)}
 .hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:4;opacity:0;display:flex;flex-direction:column;align-items:center;gap:10px}
 .hero-scroll span{font-family:var(--title);font-size:10px;letter-spacing:0.3em;color:rgba(255,255,255,0.7);text-transform:uppercase}
@@ -178,7 +175,7 @@ nav.on-dark .nav-links a:hover{color:#fff}
 /* INSIGHT TYPES — light */
 #types{background:#1a1a1a;padding:120px 6vw;color:#fff}
 .types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.08);margin-top:64px}
-.type-card{background:#222;padding:44px 36px;position:relative;overflow:hidden;cursor:none;transition:background 0.3s}
+.type-card{background:#222;padding:44px 36px;position:relative;overflow:hidden;transition:background 0.3s}
 .type-card:hover{background:#2a2a2a}
 .type-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--yellow);transform:scaleY(0);transform-origin:bottom;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1)}
 .type-card:hover::before{transform:scaleY(1)}
@@ -212,12 +209,12 @@ nav.on-dark .nav-links a:hover{color:#fff}
 .conv-h{font-family:var(--title);font-size:clamp(48px,7vw,96px);font-weight:200;line-height:0.95;letter-spacing:-0.025em;color:var(--black);margin-bottom:48px}
 .conv-h span{font-style:italic;font-weight:200;color:rgba(0,0,0,0.55);display:block}
 .conv-cards{display:grid;grid-template-columns:1fr 1fr;gap:2px;max-width:800px;background:rgba(0,0,0,0.08)}
-.conv-card{background:var(--bg2);padding:48px 40px;cursor:none;transition:background 0.3s}
+.conv-card{background:var(--bg2);padding:48px 40px;transition:background 0.3s}
 .conv-card:hover{background:#fff}
 .conv-tag{font-family:var(--title);font-size:9px;letter-spacing:0.35em;text-transform:uppercase;color:var(--lgray);margin-bottom:14px}
 .conv-card h3{font-family:var(--title);font-size:22px;font-weight:200;letter-spacing:-0.01em;color:var(--black);margin-bottom:10px}
 .conv-card p{font-size:13px;font-weight:400;line-height:1.8;color:rgba(0,0,0,0.45);margin-bottom:32px}
-.conv-trigger{width:100%;background:var(--black);color:#fff;border:none;padding:15px;font-family:var(--title);font-size:10px;font-weight:300;letter-spacing:0.18em;text-transform:uppercase;cursor:none;transition:background 0.2s}
+.conv-trigger{width:100%;background:var(--black);color:#fff;border:none;padding:15px;font-family:var(--title);font-size:10px;font-weight:300;letter-spacing:0.18em;text-transform:uppercase;transition:background 0.2s}
 .conv-trigger:hover{background:#222}
 .conv-trigger.outline{background:transparent;color:var(--black);border:1px solid rgba(0,0,0,0.2)}
 .conv-trigger.outline:hover{background:rgba(0,0,0,0.04);border-color:rgba(0,0,0,0.35)}
@@ -250,7 +247,7 @@ nav.on-dark .nav-links a:hover{color:#fff}
 .form-field{width:100%;background:#fff;border:1px solid var(--border);padding:13px 16px;font-family:var(--body);font-size:13px;color:var(--black);margin-bottom:8px;outline:none;transition:border-color 0.3s}
 .form-field:focus{border-color:rgba(0,0,0,0.3)}
 .form-field::placeholder{color:rgba(0,0,0,0.25)}
-.btn-submit{width:100%;background:var(--black);color:#fff;border:none;padding:15px;font-family:var(--title);font-size:10px;font-weight:300;letter-spacing:0.18em;text-transform:uppercase;cursor:none;margin-top:4px;transition:background 0.2s}
+.btn-submit{width:100%;background:var(--black);color:#fff;border:none;padding:15px;font-family:var(--title);font-size:10px;font-weight:300;letter-spacing:0.18em;text-transform:uppercase;margin-top:4px;transition:background 0.2s}
 .btn-submit:hover{background:#222}
 .form-ok{display:none;font-family:var(--title);font-size:10px;letter-spacing:0.2em;color:var(--black);padding:16px;text-align:center;border:1px solid var(--border);text-transform:uppercase;margin-top:12px}
 
@@ -270,7 +267,7 @@ footer{background:var(--black);padding:80px 6vw 40px}
 .modal-overlay.open{opacity:1;pointer-events:auto}
 .modal{background:var(--bg2);width:100%;max-width:520px;padding:56px 52px;position:relative;transform:translateY(24px);transition:transform 0.4s cubic-bezier(0.16,1,0.3,1)}
 .modal-overlay.open .modal{transform:translateY(0)}
-.modal-close{position:absolute;top:20px;right:24px;background:none;border:none;font-family:var(--title);font-size:18px;color:var(--lgray);cursor:none;line-height:1;transition:color 0.2s}
+.modal-close{position:absolute;top:20px;right:24px;background:none;border:none;font-family:var(--title);font-size:18px;color:var(--lgray);line-height:1;transition:color 0.2s}
 .modal-close:hover{color:var(--black)}
 .modal-tag{font-family:var(--title);font-size:9px;letter-spacing:0.4em;color:var(--lgray);text-transform:uppercase;margin-bottom:12px}
 .modal h2{font-family:var(--title);font-size:28px;font-weight:200;letter-spacing:-0.01em;color:var(--black);margin-bottom:8px}
@@ -388,8 +385,7 @@ footer{background:var(--black);padding:80px 6vw 40px}
 </head>
 <body>
 
-<div class="cur" id="cur"></div>
-<div class="cur-ring" id="curRing"></div>
+
 
 <nav id="nav" class="on-dark">
   <a href="#">
@@ -855,12 +851,6 @@ footer{background:var(--black);padding:80px 6vw 40px}
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({ignoreMobileResize:true});
 
-// CURSOR
-const cur = document.getElementById('cur');
-const ring = document.getElementById('curRing');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
-(function a(){rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a)})();
 
 // NAV
 const nav=document.getElementById('nav');
