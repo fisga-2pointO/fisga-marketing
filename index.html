@@ -312,7 +312,7 @@ footer{background:var(--black);padding:80px 6vw 40px}
   .hero-sub{font-size:15px;margin-top:20px}
   .hero-actions{flex-direction:column;gap:10px;align-items:flex-start}
   .btn-y,.btn-ghost-w{padding:14px 28px;font-size:11px;width:auto}
-  .hero-scroll{bottom:24px}
+  .hero-scroll{display:none}
 
   /* Story — further tighten on phone */
   .story-right{padding:48px 24px}
@@ -338,10 +338,16 @@ footer{background:var(--black);padding:80px 6vw 40px}
   .types-grid{grid-template-columns:1fr 1fr}
   .type-card{padding:32px 24px}
 
-  /* Testimonials */
+  /* Testimonials — always show background on mobile */
   #testi{padding:80px 24px}
   .testimonials-grid{grid-template-columns:1fr;gap:2px}
   .t-card{padding:40px 28px}
+  .t-card .t-hover-img{opacity:1 !important}
+  .t-card::after{background:rgba(0,0,0,0.57) !important}
+  .t-card .t-quote{color:rgba(255,255,255,0.9) !important;font-size:16px}
+  .t-card .t-name{color:#fff !important;font-size:15px}
+  .t-card .t-role{color:rgba(255,255,255,0.55) !important;font-size:11px}
+  .t-card .t-mark{color:var(--yellow) !important}
 
   /* Convert */
   #convert{padding:80px 24px}
@@ -368,6 +374,16 @@ footer{background:var(--black);padding:80px 6vw 40px}
   nav{padding:18px 24px}
   .nav-links li:not(:last-child){display:none}
   .nav-logo img{height:22px}
+
+  /* Text sizes — bump up small text for readability */
+  .t-bio{font-size:15px}
+  .t-person-quote{font-size:15px}
+  .invest-body{font-size:15px}
+  .what-sub{font-size:16px}
+  .form-field{font-size:16px} /* prevents iOS Safari auto-zoom on input focus */
+  .form-ok{font-size:12px}
+  .fiw-output-sub{font-size:12px}
+  .proof-card p{font-size:14px}
 }
 
 @media (max-width: 480px) {
@@ -812,7 +828,7 @@ footer{background:var(--black);padding:80px 6vw 40px}
     <div class="foot-col">
       <h4>Contact</h4>
       <a href="mailto:hello@fisga.co">hello@fisga.co</a>
-      <a href="https://linkedin.com/company/fisga" target="_blank">LinkedIn ↗</a>
+      <a href="https://www.linkedin.com/company/fisga-ai-insights/" target="_blank">LinkedIn ↗</a>
     </div>
   </div>
   <div class="foot-bot">
