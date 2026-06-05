@@ -116,15 +116,48 @@ nav.on-dark .nav-links a:hover{color:#fff}
 #types .sec-h{color:#FFFFFF !important}
 #types .sec-h em{color:rgba(255,255,255,0.35) !important}
 .sec-h em{font-style:italic;font-weight:100;color:rgba(0,0,0,0.3)}
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
-.pillar{background:var(--bg2);padding:52px 40px;position:relative;overflow:hidden;transition:background 0.3s}
-.pillar:hover{background:#fff}
-.p-bar{position:absolute;top:0;left:0;right:0;height:3px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform 0.5s cubic-bezier(0.16,1,0.3,1)}
-.pillar:hover .p-bar{transform:scaleX(1)}
-.p-num{font-family:var(--title);font-size:9px;letter-spacing:0.35em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:32px}
-.pillar h3{font-family:var(--title);font-size:20px;font-weight:200;letter-spacing:0.02em;color:var(--black);margin-bottom:14px}
-.pillar p{font-size:14px;font-weight:400;line-height:1.85;color:rgba(0,0,0,0.45)}
+.what-sub{font-size:16px;font-weight:400;line-height:1.85;color:rgba(0,0,0,0.55);max-width:580px;margin-bottom:56px}
+/* Data layers */
+.fiw-layers{border:1px solid var(--border2);border-radius:6px;overflow:hidden;background:var(--bg2);margin-bottom:36px}
+.fiw-layer-row{display:flex;align-items:center;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border)}
+.fiw-layer-row:last-child{border-bottom:none}
+.fiw-layer-meta{min-width:180px;flex-shrink:0;display:flex;align-items:center;gap:10px}
+.fiw-badge-live{font-family:var(--title);font-size:8px;letter-spacing:0.12em;text-transform:uppercase;background:var(--yellow);color:var(--black);border-radius:3px;padding:3px 8px;flex-shrink:0}
+.fiw-badge-soon{font-family:var(--title);font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--lgray);border-radius:3px;padding:3px 8px;border:1px dashed var(--border2);flex-shrink:0}
+.fiw-layer-name{font-family:var(--title);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray)}
+.fiw-pills{display:flex;gap:6px;flex-wrap:wrap}
+.fiw-pill{display:inline-flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:4px 10px;font-size:11px;color:var(--mid)}
+.fiw-pill-soon{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px dashed var(--border2);border-radius:4px;padding:4px 10px;font-size:11px;color:var(--lgray)}
+.fiw-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.fiw-dot-green{background:#2d7a55}.fiw-dot-orange{background:#9a4712}.fiw-dot-gray{background:var(--lgray)}
+/* Chat */
+.fiw-chat{background:var(--bg2);border:1px solid var(--border2);border-radius:6px;padding:28px 32px;margin-bottom:36px}
+.fiw-chat-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.fiw-chat-header-left{display:flex;align-items:center;gap:10px}
+.fiw-chat-tag{font-family:var(--title);font-size:8px;letter-spacing:0.12em;text-transform:uppercase;background:var(--yellow);color:var(--black);border-radius:3px;padding:3px 8px}
+.fiw-chat-title{font-family:var(--title);font-size:12px;font-weight:400;letter-spacing:0.06em;color:var(--black)}
+.fiw-chat-scope{font-family:var(--title);font-size:9px;letter-spacing:0.08em;color:var(--lgray);text-transform:uppercase}
+.fiw-messages{display:flex;flex-direction:column;gap:10px}
+.fiw-msg-user{align-self:flex-end;background:var(--bg3);border-radius:10px 10px 2px 10px;padding:10px 15px;font-size:13px;line-height:1.6;color:var(--mid);max-width:65%;opacity:0;transform:translateX(16px);transition:opacity 0.4s ease,transform 0.4s ease}
+.fiw-msg-fisga{align-self:flex-start;background:var(--black);border-radius:10px 10px 10px 2px;padding:10px 15px;font-size:13px;line-height:1.6;color:rgba(255,255,255,0.82);max-width:75%;opacity:0;transform:translateX(-16px);transition:opacity 0.4s ease,transform 0.4s ease}
+.fiw-typing{align-self:flex-start;display:none;align-items:center;gap:4px;padding:10px 14px;background:var(--black);border-radius:10px 10px 10px 2px;height:38px}
+.fiw-typing.active{display:flex}
+.fiw-typing span{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.4);animation:fiw-blink 1.2s infinite}
+.fiw-typing span:nth-child(2){animation-delay:0.2s}.fiw-typing span:nth-child(3){animation-delay:0.4s}
+@keyframes fiw-blink{0%,80%,100%{opacity:0.25}40%{opacity:1}}
+.fiw-msg-user.fiw-visible,.fiw-msg-fisga.fiw-visible{opacity:1;transform:none}
+/* Output grid */
+.fiw-output-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-bottom:64px}
+.fiw-output-card{background:var(--bg2);padding:28px 24px;transition:background 0.3s;position:relative;overflow:hidden}
+.fiw-output-card:hover{background:#fff}
+.fiw-output-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1)}
+.fiw-output-card:hover::before{transform:scaleX(1)}
+.fiw-output-tag{font-family:var(--title);font-size:8px;letter-spacing:0.12em;text-transform:uppercase;background:var(--yellow);color:var(--black);border-radius:3px;padding:2px 6px;display:inline-block;margin-bottom:10px}
+.fiw-output-title{font-family:var(--title);font-size:14px;font-weight:300;letter-spacing:0.01em;color:var(--black);margin-bottom:4px}
+.fiw-output-sub{font-size:11px;color:var(--lgray)}
 .us-note{font-family:var(--title);font-size:13px;letter-spacing:0.15em;color:var(--black);text-transform:uppercase;margin-top:64px;font-weight:500}
+@media(max-width:768px){.fiw-output-grid{grid-template-columns:repeat(2,1fr)}.fiw-layer-meta{min-width:120px}.fiw-chat-scope{display:none}.fiw-msg-user,.fiw-msg-fisga{max-width:88%}}
+@media(max-width:480px){.fiw-output-grid{grid-template-columns:1fr 1fr}.fiw-layer-row{flex-wrap:wrap;gap:8px}}
 
 /* PROOF — white */
 #proof{background:var(--bg2);padding:120px 0 0;overflow:hidden}
@@ -465,30 +498,90 @@ footer{background:var(--black);padding:80px 6vw 40px}
   </div>
 </section>
 
-<!-- WHAT FISGA DOES -->
+<!-- HOW IT WORKS -->
 <section id="what">
-  <div class="sec-eye reveal">What We Do</div>
-  <h2 class="sec-h reveal">Fisga goes into both futures<br><em>before you have to.</em></h2>
-  <div class="pillars">
-    <div class="pillar">
-      <div class="p-bar"></div>
-      <div class="p-num">Federal Data — 01</div>
-      <h3>Grounded in federal data</h3>
-      <p>Every insight traceable to Census, BLS, FRED, BRFSS, and GSS. Named sources. Visible lineage. Defensible to your board, your CFO, your franchise owner.</p>
+  <div class="sec-eye reveal">How It Works</div>
+  <h2 class="sec-h reveal">Two data worlds.<br><em>One knowledge graph.</em></h2>
+  <p class="what-sub reveal">Fisga fuses population-grounded public data with your client's proprietary context — then lets you interrogate every output in real time.</p>
+
+  <!-- Data Layers -->
+  <div class="fiw-layers">
+    <div class="fiw-layer-row reveal">
+      <div class="fiw-layer-meta">
+        <span class="fiw-badge-live">Live</span>
+        <span class="fiw-layer-name">Population data</span>
+      </div>
+      <div class="fiw-pills">
+        <span class="fiw-pill"><span class="fiw-dot fiw-dot-green"></span>Demographics</span>
+        <span class="fiw-pill"><span class="fiw-dot fiw-dot-green"></span>Consumer spend</span>
+        <span class="fiw-pill"><span class="fiw-dot fiw-dot-green"></span>Economic data</span>
+        <span class="fiw-pill"><span class="fiw-dot fiw-dot-green"></span>Health signals</span>
+        <span class="fiw-pill"><span class="fiw-dot fiw-dot-green"></span>Search intent</span>
+      </div>
     </div>
-    <div class="pillar">
-      <div class="p-bar"></div>
-      <div class="p-num">Directional — 02</div>
-      <h3>Directional not predictive</h3>
-      <p>We eliminate enough wrong paths that the right direction becomes visible. You still decide. You walk in ready. That distinction matters — and it's what your board needs to hear.</p>
+    <div class="fiw-layer-row reveal">
+      <div class="fiw-layer-meta">
+        <span class="fiw-badge-live">Live</span>
+        <span class="fiw-layer-name">Client proprietary</span>
+      </div>
+      <div class="fiw-pills">
+        <span class="fiw-pill"><span class="fiw-dot fiw-dot-orange"></span>CRM &amp; sales</span>
+        <span class="fiw-pill"><span class="fiw-dot fiw-dot-orange"></span>Brand documents</span>
+        <span class="fiw-pill"><span class="fiw-dot fiw-dot-orange"></span>Product catalog</span>
+        <span class="fiw-pill"><span class="fiw-dot fiw-dot-orange"></span>Past research</span>
+      </div>
     </div>
-    <div class="pillar">
-      <div class="p-bar"></div>
-      <div class="p-num">Speed — 03</div>
-      <h3>Minutes not months</h3>
-      <p>Traditional research vendors take weeks. We deliver same-day. That's the white space Fisga was built to occupy.</p>
+    <div class="fiw-layer-row reveal">
+      <div class="fiw-layer-meta">
+        <span class="fiw-badge-soon">Soon</span>
+        <span class="fiw-layer-name">Expanded signals</span>
+      </div>
+      <div class="fiw-pills">
+        <span class="fiw-pill-soon"><span class="fiw-dot fiw-dot-gray"></span>Behavioral data</span>
+        <span class="fiw-pill-soon"><span class="fiw-dot fiw-dot-gray"></span>Industry profiles</span>
+        <span class="fiw-pill-soon"><span class="fiw-dot fiw-dot-gray"></span>Vertical feeds</span>
+        <span class="fiw-pill-soon"><span class="fiw-dot fiw-dot-gray"></span>Real-time signals</span>
+      </div>
     </div>
   </div>
+
+  <!-- Live Chat Demo -->
+  <div class="fiw-chat reveal" id="fiwChat">
+    <div class="fiw-chat-header">
+      <div class="fiw-chat-header-left">
+        <span class="fiw-chat-tag">Chat ↗</span>
+        <span class="fiw-chat-title">Live conversations</span>
+      </div>
+      <span class="fiw-chat-scope">Clients · projects · reports · segments · personas</span>
+    </div>
+    <div class="fiw-messages">
+      <div class="fiw-msg-user"  id="fiw-m1">Who is our highest-value segment in Texas?</div>
+      <div class="fiw-typing"    id="fiw-t1"><span></span><span></span><span></span></div>
+      <div class="fiw-msg-fisga" id="fiw-m2">Your core buyer is 35–44, urban female, HHI $80k+. They drive an outsized share of category spend and index high on convenience and trust signals.</div>
+      <div class="fiw-msg-user"  id="fiw-m3">How does that compare to the Florida project?</div>
+      <div class="fiw-typing"    id="fiw-t2"><span></span><span></span><span></span></div>
+      <div class="fiw-msg-fisga" id="fiw-m4">Florida's top segment shares the age band but skews suburban with stronger brand loyalty. Price sensitivity is lower — higher willingness to pay at shelf.</div>
+      <div class="fiw-msg-user"  id="fiw-m5">Pull all personas with high price sensitivity across active projects</div>
+      <div class="fiw-typing"    id="fiw-t3"><span></span><span></span><span></span></div>
+      <div class="fiw-msg-fisga" id="fiw-m6">Three personas match. Strongest signal in the Q1 CPG study — a 28–38 female, mid-income, convenience-driven buyer who price-compares on shelf. Want me to compare their purchase triggers?</div>
+      <div class="fiw-msg-user"  id="fiw-m7">Yes — and flag any overlap with the retail client's segments</div>
+      <div class="fiw-typing"    id="fiw-t4"><span></span><span></span><span></span></div>
+      <div class="fiw-msg-fisga" id="fiw-m8">Two overlap: the value-first buyer and the aspirational mid-income shopper appear in both. Retail client's version skews slightly older with stronger loyalty once converted. Same acquisition challenge, different retention profile.</div>
+    </div>
+  </div>
+
+  <!-- Output Types -->
+  <div class="fiw-output-grid">
+    <div class="fiw-output-card"><div class="fiw-output-tag">Segments</div><div class="fiw-output-title">Behavioral personas</div><div class="fiw-output-sub">Context-weighted, channel-ready</div></div>
+    <div class="fiw-output-card"><div class="fiw-output-tag">Market</div><div class="fiw-output-title">Market entry analysis</div><div class="fiw-output-sub">City-level feasibility</div></div>
+    <div class="fiw-output-card"><div class="fiw-output-tag">Memo</div><div class="fiw-output-title">Executive brief</div><div class="fiw-output-sub">Board-ready, source-cited</div></div>
+    <div class="fiw-output-card"><div class="fiw-output-tag">Deck</div><div class="fiw-output-title">Slide deck</div><div class="fiw-output-sub">Presentation-ready output</div></div>
+    <div class="fiw-output-card"><div class="fiw-output-tag">GTM</div><div class="fiw-output-title">Go-to-market plan</div><div class="fiw-output-sub">Channel, timing, positioning</div></div>
+    <div class="fiw-output-card"><div class="fiw-output-tag">Brand</div><div class="fiw-output-title">Positioning brief</div><div class="fiw-output-sub">Narrative &amp; differentiation</div></div>
+    <div class="fiw-output-card"><div class="fiw-output-tag">Comms</div><div class="fiw-output-title">Stakeholder email</div><div class="fiw-output-sub">One-click from the study</div></div>
+    <div class="fiw-output-card"><div class="fiw-output-tag">Intel</div><div class="fiw-output-title">Competitive landscape</div><div class="fiw-output-sub">Category benchmarking</div></div>
+  </div>
+
   <p class="us-note reveal">Currently serving US-based CPG and operator teams.</p>
 </section>
 
@@ -858,17 +951,56 @@ gsap.utils.toArray('.reveal').forEach(el=>{
   gsap.fromTo(el,{opacity:0,y:28},{opacity:1,y:0,duration:0.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 86%',once:true}});
 });
 
-// PILLAR STAGGER
+// OUTPUT CARD STAGGER
 ScrollTrigger.create({
-  trigger:'#what',
-  start:'top 70%',
+  trigger:'.fiw-output-grid',
+  start:'top 80%',
   once:true,
   onEnter:()=>{
-    gsap.utils.toArray('.pillar').forEach((el,i)=>{
-      gsap.fromTo(el,{opacity:0,y:24},{opacity:1,y:0,duration:0.7,delay:i*0.15,ease:'power3.out'});
+    gsap.utils.toArray('.fiw-output-card').forEach((el,i)=>{
+      gsap.fromTo(el,{opacity:0,y:20},{opacity:1,y:0,duration:0.6,delay:i*0.07,ease:'power3.out'});
     });
   }
 });
+
+// CHAT CONVERSATION — fires once when card scrolls into view
+(function(){
+  var chatDone=false;
+  function showMsg(id){var el=document.getElementById(id);if(el)el.classList.add('fiw-visible')}
+  function showTyping(id){var el=document.getElementById(id);if(el)el.classList.add('active')}
+  function hideTyping(id){var el=document.getElementById(id);if(el)el.classList.remove('active')}
+  function runChat(){
+    if(chatDone)return;chatDone=true;
+    var seq=[
+      [0,    'msg',  'fiw-m1'],
+      [400,  'type', 'fiw-t1'],
+      [1100, 'swap', 'fiw-t1','fiw-m2'],
+      [1700, 'msg',  'fiw-m3'],
+      [2100, 'type', 'fiw-t2'],
+      [2800, 'swap', 'fiw-t2','fiw-m4'],
+      [3400, 'msg',  'fiw-m5'],
+      [3800, 'type', 'fiw-t3'],
+      [4500, 'swap', 'fiw-t3','fiw-m6'],
+      [5100, 'msg',  'fiw-m7'],
+      [5500, 'type', 'fiw-t4'],
+      [6200, 'swap', 'fiw-t4','fiw-m8'],
+    ];
+    seq.forEach(function(s){
+      setTimeout(function(){
+        if(s[1]==='msg')showMsg(s[2]);
+        else if(s[1]==='type')showTyping(s[2]);
+        else if(s[1]==='swap'){hideTyping(s[2]);showMsg(s[3]);}
+      },s[0]);
+    });
+  }
+  var chat=document.getElementById('fiwChat');
+  if(chat){
+    var obs=new IntersectionObserver(function(entries,o){
+      entries.forEach(function(e){if(!e.isIntersecting)return;o.unobserve(e.target);runChat();});
+    },{threshold:0.25});
+    obs.observe(chat);
+  }
+})();
 
 // PROOF HORIZONTAL SCROLL
 const track=document.getElementById('proofTrack');
