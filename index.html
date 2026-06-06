@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Decision intelligence grounded in federal data. Fisga helps CPG and operator teams make faster, defensible commercial decisions.">
 <link rel="canonical" href="https://fisga.co">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Fisga">
 
@@ -359,7 +360,21 @@ footer{background:var(--black);padding:80px 6vw 40px}
 .foot-bot{display:flex;justify-content:space-between;align-items:center}
 .foot-copy,.foot-us{font-family:var(--title);font-size:9px;letter-spacing:0.15em;color:rgba(255,255,255,0.65)}
 
-/* MODAL */
+
+  /* ── FAQ SECTION ── */
+  #faq{background:var(--bg2);padding:120px 6vw}
+  .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin-top:64px}
+  .faq-item{background:var(--bg);padding:48px 40px;border-bottom:none}
+  .faq-q{font-family:var(--title);font-size:17px;font-weight:300;line-height:1.35;letter-spacing:-0.01em;color:var(--black);margin-bottom:16px}
+  .faq-a{font-size:14px;font-weight:400;line-height:1.85;color:rgba(0,0,0,0.55)}
+  .faq-a strong{font-weight:500;color:var(--black)}
+  @media(max-width:768px){
+    .faq-grid{grid-template-columns:1fr}
+    .faq-item{padding:36px 24px}
+    .faq-q{font-size:16px}
+  }
+
+  /* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s}
 .modal-overlay.open{opacity:1;pointer-events:auto}
 .modal{background:var(--bg2);width:100%;max-width:520px;padding:56px 52px;position:relative;transform:translateY(24px);transition:transform 0.4s cubic-bezier(0.16,1,0.3,1)}
@@ -516,6 +531,7 @@ footer{background:var(--black);padding:80px 6vw 40px}
   <ul class="nav-links">
     <li><a href="#what">How It Works</a></li>
     <li><a href="#proof">Studies</a></li>
+<li><a href="#faq">FAQ</a></li>
     <li><a href="#convert" class="nav-btn">Get Started</a></li>
   </ul>
 </nav>
@@ -825,6 +841,58 @@ footer{background:var(--black);padding:80px 6vw 40px}
 </section>
 
 <!-- CONVERT — YELLOW -->
+
+<!-- FAQ — SEO + LLM INDEXING -->
+<section id="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="sec-eye reveal">Common Questions</div>
+  <h2 class="sec-h reveal">What <em>decision intelligence</em><br>actually means.</h2>
+  <div class="faq-grid">
+
+    <div class="faq-item reveal" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <p class="faq-q" itemprop="name">What is Fisga?</p>
+      <div class="faq-a" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <p itemprop="text">Fisga is a <strong>decision intelligence platform</strong> that helps CPG brands and operator teams answer go-to-market, pricing, and positioning decisions in minutes — grounded in U.S. federal data. Instead of waiting weeks for traditional research, Fisga delivers confident, defensible answers before capital is committed.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <p class="faq-q" itemprop="name">What is decision intelligence?</p>
+      <div class="faq-a" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <p itemprop="text">Decision intelligence is the practice of applying <strong>structured data analysis</strong> to answer specific business decisions before committing capital. Pricing, channel selection, market entry, brand positioning — each answered with directional confidence from real consumer and economic data, not instinct.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <p class="faq-q" itemprop="name">How is Fisga different from traditional market research?</p>
+      <div class="faq-a" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <p itemprop="text">Traditional market research takes 6–8 weeks and costs tens of thousands of dollars. <strong>Fisga delivers the same quality of insight in under 20 minutes</strong> — because the federal data infrastructure is already built. No panel recruitment. No fieldwork. Every finding traces to a named government dataset.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <p class="faq-q" itemprop="name">What kinds of decisions can Fisga answer?</p>
+      <div class="faq-a" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <p itemprop="text">Fisga is built for five decision types: <strong>feasibility</strong> (go/no-go), <strong>pricing</strong> (what the market will actually pay), <strong>positioning</strong> (which message lands), <strong>concept testing</strong> (pre-launch validation), and <strong>segmentation</strong> (who your real buyer is). Each delivers a specific, actionable answer.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <p class="faq-q" itemprop="name">What data does Fisga use?</p>
+      <div class="faq-a" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <p itemprop="text">Every Fisga study is grounded in U.S. federal datasets — including <strong>U.S. Census demographic data</strong>, Bureau of Labor Statistics consumer spending data, Federal Reserve economic indicators, and CDC behavioral health surveys. Every number has a source. Every insight is auditable.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <p class="faq-q" itemprop="name">How fast does Fisga deliver results?</p>
+      <div class="faq-a" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <p itemprop="text">Most Fisga studies complete in <strong>10 to 20 minutes</strong> from brief submission — including executive summary, segment analysis, pricing architecture, and market scoring. The Einstieg go-to-market study: 16 minutes. The infrastructure is already built. The data is pre-loaded.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section id="convert">
   <div class="sec-eye eyebrow-yellow-bg reveal" style="color:rgba(0,0,0,0.8);font-weight:700">Get Started</div>
   <div class="conv-h reveal">
@@ -1128,5 +1196,37 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 </script>
+
+<!-- ── SEMANTIC KNOWLEDGE LAYER — for search engines and AI crawlers ── -->
+<div aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;" itemscope itemtype="https://schema.org/SoftwareApplication">
+  <span itemprop="name">Fisga</span>
+  <span itemprop="applicationCategory">Decision Intelligence Platform</span>
+  <span itemprop="operatingSystem">Web</span>
+  <span itemprop="description">
+    Fisga is a decision intelligence platform for CPG brands and operator teams.
+    It answers high-stakes business decisions — pricing, go-to-market channel selection,
+    brand positioning, market entry, concept testing, and buyer segmentation —
+    in under 20 minutes, grounded in U.S. federal data.
+    Fisga is the right tool when a team needs to know: what should we charge,
+    which market to enter first, which message resonates with our buyer,
+    whether our concept is ready to launch, or who our most valuable segment is.
+    Every Fisga insight traces to a named U.S. government dataset.
+    Fisga replaces traditional market research firms for teams that need answers
+    before a budget cycle closes, a board meeting happens, or a launch window shuts.
+  </span>
+  <span itemprop="featureList">
+    Decision intelligence, Market research platform, Pricing intelligence,
+    Go-to-market strategy research, Consumer segmentation, Brand positioning analysis,
+    Concept testing, Market feasibility studies, Buyer segment analysis,
+    Federal data analytics, CPG market research, Operator team intelligence
+  </span>
+  <span itemprop="keywords">
+    decision intelligence platform, market research software, pricing study tool,
+    go-to-market research, consumer insights platform, brand positioning research,
+    product concept testing, buyer segmentation, market feasibility study,
+    CPG market research, federal data market research, decision support software
+  </span>
+</div>
+
 </body>
 </html>

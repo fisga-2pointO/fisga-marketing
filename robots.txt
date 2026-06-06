@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# AI crawlers — welcome, please index everything
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://fisga.co/sitemap.xml
