@@ -434,8 +434,7 @@ footer{background:var(--black);padding:80px 6vw 40px}
   <div class="hero-glow"></div>
   <div class="hero-content">
     <p class="hero-tag">Decision Intelligence</p>
-    <h1 class="hero-h1">Every hard decision<br>puts you in <em>the same place.</em><br><strong>We close the gap.</strong></h1>
-    <p class="hero-sub">Most decisions aren't wrong. They're just underprepared.</p>
+    <h1 class="hero-h1">Every hard decision<br>puts you in <em>the same place.</em><br><strong>Not enough signal.<br>Too much at stake.</strong></h1>
     <div class="hero-actions">
       <a href="#convert" class="btn-y">See How It Works</a>
       <a href="#proof" class="btn-ghost-w">View a Study</a>
@@ -896,13 +895,11 @@ window.addEventListener('scroll',()=>{
 setTimeout(()=>{
   gsap.set('.hero-tag',{opacity:0,y:10});
   gsap.set('.hero-h1',{opacity:0,y:40});
-  gsap.set('.hero-sub',{opacity:0,y:20});
   gsap.set('.hero-actions',{opacity:0,y:14});
   gsap.set('#heroScroll',{opacity:0});
   const htl=gsap.timeline({delay:0.2});
   htl.to('.hero-tag',{opacity:1,y:0,duration:0.8,ease:'power3.out'})
     .to('.hero-h1',{opacity:1,y:0,duration:1,ease:'power4.out'},'-=0.4')
-    .to('.hero-sub',{opacity:1,y:0,duration:0.8,ease:'power3.out'},'-=0.6')
     .to('.hero-actions',{opacity:1,y:0,duration:0.6,ease:'power3.out'},'-=0.5')
     .to('#heroScroll',{opacity:1,duration:0.5},'-=0.2');
 }, 100);
