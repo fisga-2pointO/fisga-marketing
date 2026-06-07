@@ -214,7 +214,7 @@ nav.on-dark .nav-links a:hover{color:#fff}
 .hero-content{position:relative;z-index:2;max-width:900px}
 .hero-tag{font-family:var(--title);font-size:9px;letter-spacing:0.4em;color:var(--yellow);text-transform:uppercase;opacity:0;margin-bottom:32px;display:flex;align-items:center;gap:14px}
 .hero-tag::before{content:'';width:28px;height:1px;background:var(--yellow);opacity:0.5}
-.hero-h1{font-family:var(--title);font-size:clamp(52px,7.5vw,112px);font-weight:300;line-height:1.0;letter-spacing:-0.02em;color:#fff}
+.hero-h1{font-family:var(--title);font-size:clamp(44px,6.2vw,88px);font-weight:300;line-height:0.95;letter-spacing:-0.02em;color:#fff}
 .hero-h1 em{font-style:italic;color:rgba(255,255,255,0.55)}
 .hero-h1 strong{font-weight:200;color:var(--yellow)}
 .hero-sub{font-family:var(--body);font-size:clamp(15px,1.4vw,18px);font-weight:400;line-height:1.85;color:rgba(255,255,255,0.9);max-width:500px;margin-top:28px}
@@ -326,8 +326,10 @@ nav.on-dark .nav-links a:hover{color:#fff}
 .proof-card h3{font-family:var(--title);font-size:20px;font-weight:200;line-height:1.25;letter-spacing:-0.01em;color:var(--black);margin-bottom:14px}
 .proof-card p{font-size:13px;font-weight:400;line-height:1.85;color:rgba(0,0,0,0.45);margin-bottom:24px;flex:1}
 .proof-src{font-family:var(--title);font-size:8px;letter-spacing:0.2em;color:rgba(0,0,0,0.2);text-transform:uppercase;border-top:1px solid var(--border);padding-top:16px;margin-bottom:16px}
-.proof-cta{font-family:var(--title);font-size:9px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--black);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap 0.2s ease}
-.proof-cta:hover{gap:10px}
+.proof-card{position:relative}
+.proof-cta{font-family:var(--title);font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:gap 0.2s ease,color 0.2s;position:relative;z-index:2}
+.proof-cta:hover{gap:12px;color:var(--black)}
+.proof-cta::after{content:'';position:absolute;inset:-999px -999px -999px -999px;z-index:1}
 
 /* INSIGHT TYPES — light */
 #types{background:#1a1a1a;padding:120px 6vw;color:#fff}
