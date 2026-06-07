@@ -667,6 +667,13 @@ footer{background:var(--black);padding:80px 6vw 40px}
   </button>
 </nav>
 
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="#what">How It Works</a>
+  <a href="#proof">Studies</a>
+  <a href="#faq">FAQ</a>
+  <a href="#convert" class="mob-cta">Get Started</a>
+</div>
+
 <!-- HERO -->
 <section id="hero">
   <div class="hero-video" id="heroVideo">
@@ -1327,6 +1334,21 @@ function handleForm(fid,okid,type){
 }
 handleForm('demoForm','demoOk','demo_request');
 handleForm('pilotForm','pilotOk','pilot_request');
+
+// MOBILE NAV
+(function(){
+  const btn=document.getElementById('navHamburger');
+  const menu=document.getElementById('navMobileMenu');
+  if(!btn||!menu)return;
+  const close=()=>{btn.classList.remove('open');menu.classList.remove('open');btn.setAttribute('aria-expanded','false');document.body.style.overflow='';};
+  btn.addEventListener('click',()=>{
+    const open=menu.classList.toggle('open');
+    btn.classList.toggle('open',open);
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    document.body.style.overflow=open?'hidden':'';
+  });
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+})();
 
 // REFRESH TRIGGERS — wait for all assets so element heights are correct
 window.addEventListener('load', () => ScrollTrigger.refresh());
