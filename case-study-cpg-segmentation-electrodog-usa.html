@@ -949,7 +949,8 @@
     font-weight: 300;
     letter-spacing: 0.02em;
     color: rgba(255,255,255,0.85);
-    white-space: nowrap;
+    white-space: normal;
+    word-break: break-word;
   }
 
   .market-bar-track {
@@ -969,7 +970,7 @@
 
   .market-score {
     font-family: 'Raleway', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 300;
     color: rgba(255,255,255,0.5);
     text-align: right;
@@ -1203,6 +1204,23 @@
     .price-panel { padding: 28px 24px; }
     .studio-body { padding: 24px; }
     .verdict-box { padding: 28px 24px; }
+    /* Nav mobile */
+    nav#main-nav { padding: 16px 24px; }
+    /* Hero stats gap */
+    .hero-stats { gap: 16px; }
+    /* Segment cards */
+    .segment-body { padding: 20px; }
+    .segment-name { font-size: clamp(20px, 5vw, 28px); }
+    /* Price rows */
+    .price-row-meta { flex-wrap: wrap; }
+    /* Market bars */
+    .market-row { grid-template-columns: 130px 1fr 50px; gap: 10px; }
+    .market-name { font-size: 12px; }
+    .market-score { font-size: 11px; }
+    /* Misc */
+    .proof-card { padding: 20px 24px; }
+    .dbox { padding: 20px; }
+    .studio-body { padding: 20px; }
   }
 
   /* Accessibility: reduce motion */
@@ -1264,6 +1282,12 @@
     [data-anim], [data-stagger] > *, .hero-stat,
     .stat-card, .pull-quote { transition: opacity 0.3s ease !important;
       transform: none !important; clip-path: none !important; }
+  }
+  @media (max-width: 480px) {
+    .hero { padding: 80px 16px 40px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .market-row { grid-template-columns: 100px 1fr 44px; gap: 8px; }
+    .market-name { font-size: 11px; }
   }
 </style>
 </head>
