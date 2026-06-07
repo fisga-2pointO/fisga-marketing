@@ -219,50 +219,17 @@
   .body-text strong { font-weight: 500; color: var(--black); }
 
   /* ─── NAVIGATION ─── */
-  .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 6vw;
-    height: 64px;
-    background: rgba(10,10,8,0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    transition: background 0.35s ease, border-color 0.35s ease;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .nav.is-light {
-    background: rgba(247,247,244,0.96);
-    border-bottom-color: rgba(0,0,0,0.1);
-    box-shadow: 0 1px 12px rgba(0,0,0,0.06);
-  }
-  /* Ensure nav-back and nav-tag visible on light bg */
-  .nav.is-light .nav-tag {
-    background: rgba(0,0,0,0.06);
-    color: var(--mid);
-    border-color: var(--border2);
-  }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-  }
-  .cs-logo {
-    height: 20px;
-    width: auto;
-    display: block;
-  }
-  /* White logo visible on dark nav, hidden on light */
-  #csLogoWhite { display: block; }
-  #csLogoBlack { display: none; }
-  .nav.is-light #csLogoWhite { display: none; }
-  .nav.is-light #csLogoBlack { display: block; }
+  /* NAV — exact homepage system */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:22px 6vw;display:flex;justify-content:space-between;align-items:center;opacity:0;transition:opacity 0.5s,background 0.4s,border-color 0.4s;border-bottom:1px solid transparent}
+  .nav.vis{opacity:1}
+  .nav.on-light{background:rgba(247,247,244,0.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:var(--border)}
+  .nav.on-dark{background:rgba(10,10,8,0.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:rgba(255,255,255,0.06)}
+  .nav-logo{display:flex;align-items:center;text-decoration:none}
+  .cs-logo{height:20px;width:auto;display:block}
+  #csLogoWhite{display:block}
+  #csLogoBlack{display:none}
+  .nav.on-light #csLogoWhite{display:none}
+  .nav.on-light #csLogoBlack{display:block}
 
   .nav-right {
     display: flex;
@@ -285,8 +252,8 @@
   }
   .nav-back::before { content: '←'; font-size: 11px; }
   .nav-back:hover { color: rgba(255,255,255,0.9); }
-  .nav.is-light .nav-back { color: var(--gray); }
-  .nav.is-light .nav-back:hover { color: var(--mid); }
+  .nav.on-light .nav-back { color: var(--gray); }
+  .nav.on-light .nav-back:hover { color: var(--mid); }
 
   .nav-tag {
     font-family: 'Raleway', sans-serif;
@@ -300,7 +267,7 @@
     border-radius: 2px;
     transition: color 0.3s, border-color 0.3s;
   }
-  .nav.is-light .nav-tag {
+  .nav.on-light .nav-tag {
     color: var(--gray);
     border-color: var(--border2);
   }
@@ -1900,38 +1867,26 @@
 
 
 <script>
-  // Nav scroll behavior — dark at top/dark sections, light otherwise
-  (function () {
-    var nav = document.getElementById('main-nav');
-    var hero = document.querySelector('.hero');
-
-    function updateNav() {
-      var heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
-      if (heroBottom > 80) {
-        // Still over the dark hero
-        nav.classList.remove('is-light');
-      } else {
-        // Past the hero — check section background
-        var scrollY = window.scrollY || window.pageYOffset;
-        var lightSections = document.querySelectorAll('.section--bg2, .section--bg3, .section--yellow');
-        var overLight = false;
-        for (var i = 0; i < lightSections.length; i++) {
-          var rect = lightSections[i].getBoundingClientRect();
-          if (rect.top <= 64 && rect.bottom > 64) {
-            overLight = true;
-            break;
-          }
-        }
-        if (overLight) {
-          nav.classList.add('is-light');
-        } else {
-          nav.classList.remove('is-light');
-        }
-      }
+  // NAV — exact homepage system
+  (function(){
+    var nav=document.getElementById('main-nav');
+    var navVis=false;
+    var wEl=document.getElementById('csLogoWhite');
+    var bEl=document.getElementById('csLogoBlack');
+    function isDark(){
+      var darkEls=document.querySelectorAll('.hero,.section--dark,.section--black');
+      for(var i=0;i<darkEls.length;i++){var r=darkEls[i].getBoundingClientRect();if(r.top<=64&&r.bottom>64)return true;}
+      return false;
     }
-
-    window.addEventListener('scroll', updateNav, { passive: true });
-    updateNav();
+    function updateNav(){
+      if(!navVis&&window.scrollY>60){nav.classList.add('vis');navVis=true;}
+      if(!navVis)return;
+      var dark=isDark();
+      nav.className='vis '+(dark?'on-dark':'on-light');
+      if(wEl&&bEl){wEl.style.display=dark?'block':'none';bEl.style.display=dark?'none':'block';}
+    }
+    window.addEventListener('scroll',updateNav,{passive:true});
+    setTimeout(updateNav,150);
   })();
 </script>
 
