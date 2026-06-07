@@ -573,6 +573,74 @@ footer{background:var(--black);padding:80px 6vw 40px}
   .t-card:hover .t-mark{color:var(--yellow) !important}
 }
 .t-card:hover .t-mark{color:var(--yellow) !important}
+
+  /* ── HAMBURGER MENU (mobile only) ── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+    z-index: 201;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: #fff;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  nav.on-light .nav-hamburger span { background: var(--black); }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  .nav-mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: rgba(10,10,8,0.97);
+    backdrop-filter: blur(20px);
+    z-index: 199;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .nav-mobile-menu.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav-mobile-menu a {
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    font-weight: 200;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-mobile-menu a:hover { color: #fff; }
+  .nav-mobile-menu .mob-cta {
+    background: var(--yellow);
+    color: var(--black) !important;
+    padding: 14px 36px;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.2em !important;
+  }
+
+  @media (max-width: 768px) {
+    .nav-hamburger { display: flex; }
+    .nav-links { display: none !important; }
+  }
+
 </style>
 </head>
 <body>
@@ -590,6 +658,9 @@ footer{background:var(--black);padding:80px 6vw 40px}
 <li><a href="#faq">FAQ</a></li>
     <li><a href="#convert" class="nav-btn">Get Started</a></li>
   </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
