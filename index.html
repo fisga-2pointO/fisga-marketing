@@ -326,10 +326,9 @@ nav.on-dark .nav-links a:hover{color:#fff}
 .proof-card h3{font-family:var(--title);font-size:17px;font-weight:200;line-height:1.25;letter-spacing:-0.01em;color:var(--black);margin-bottom:10px}
 .proof-card p{font-size:12px;font-weight:400;line-height:1.75;color:rgba(0,0,0,0.45);margin-bottom:14px;flex:1}
 .proof-src{font-family:var(--title);font-size:8px;letter-spacing:0.2em;color:rgba(0,0,0,0.2);text-transform:uppercase;border-top:1px solid var(--border);padding-top:12px;margin-bottom:10px}
-.proof-card{position:relative}
-.proof-cta{font-family:var(--title);font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:gap 0.2s ease,color 0.2s;position:relative;z-index:2}
-.proof-cta:hover{gap:12px;color:var(--black)}
-.proof-cta::after{content:'';position:absolute;inset:-999px -999px -999px -999px;z-index:1}
+.proof-card{position:relative;cursor:pointer}
+.proof-cta{font-family:var(--title);font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:gap 0.2s ease}
+.proof-cta:hover{gap:12px}
 
 /* INSIGHT TYPES — light */
 #types{background:#1a1a1a;padding:120px 6vw;color:#fff}
@@ -1343,6 +1342,19 @@ handleForm('pilotForm','pilotOk','pilot_request');
 
 // REFRESH TRIGGERS — wait for all assets so element heights are correct
 window.addEventListener('load', () => ScrollTrigger.refresh());
+
+
+// PROOF CARDS — make entire card clickable
+document.querySelectorAll('.proof-card').forEach(function(card){
+  var cta = card.querySelector('.proof-cta');
+  if(cta && cta.getAttribute('href') && cta.getAttribute('href') !== '#'){
+    card.addEventListener('click', function(e){
+      if(!e.target.closest('a[href]') || e.target.closest('a[href]') === cta){
+        window.location.href = cta.getAttribute('href');
+      }
+    });
+  }
+});
 
 // SMOOTH SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
