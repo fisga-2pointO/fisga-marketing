@@ -1837,12 +1837,12 @@ nav.on-dark .nav-links a:hover{color:#fff}
 <script>
   // NAV — exact homepage system
   (function(){
-    var nav=document.getElementById('main-nav');
+    var nav=document.getElementById('nav');
     var navVis=false;
-    var wEl=document.getElementById('csLogoWhite');
-    var bEl=document.getElementById('csLogoBlack');
+    var wEl=document.getElementById('navLogoWhite');
+    var bEl=document.getElementById('navLogoBlack');
     function isDark(){
-      var darkEls=document.querySelectorAll('.hero,.section--dark,.section--black');
+      var darkEls=document.querySelectorAll('#hero,.section--dark,.section--black');
       for(var i=0;i<darkEls.length;i++){var r=darkEls[i].getBoundingClientRect();if(r.top<=64&&r.bottom>64)return true;}
       return false;
     }
