@@ -319,7 +319,10 @@ nav.on-dark .nav-links a:hover{color:#fff}
 .kb-dot{width:6px;height:6px;border-radius:50%;background:#2d7a55;flex-shrink:0}
 .kb-projects{display:flex;flex-wrap:wrap;gap:7px}
 .kb-project{display:inline-flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:4px 10px;font-size:11px;color:var(--mid)}
-.kb-cross{display:flex;align-items:center;justify-content:center;gap:12px;margin:24px 0 56px;font-family:var(--title);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid)}
+.kb-flow{width:4px;height:72px;margin:10px auto 0;background-image:radial-gradient(circle at center,var(--yellow) 1.5px,transparent 2px);background-size:4px 9px;background-repeat:repeat-y;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 20%,#000 80%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 20%,#000 80%,transparent);animation:kbFlow .9s linear infinite}
+@keyframes kbFlow{from{background-position:0 0}to{background-position:0 9px}}
+@media(prefers-reduced-motion:reduce){.kb-flow{animation:none}}
+.kb-cross{display:flex;align-items:center;justify-content:center;gap:12px;margin:14px 0 26px;font-family:var(--title);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid)}
 .kb-cross span{height:1px;flex:1;max-width:120px;background:var(--border2)}
 .kb-cross b{font-weight:500;color:var(--black)}
 .kb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
@@ -937,6 +940,8 @@ footer{background:var(--black);padding:80px 6vw 40px}
       </div>
     </div>
   </div>
+
+  <div class="kb-flow" aria-hidden="true"></div>
 
   <div class="kb-cross reveal"><span></span>Interact <b>across every client &amp; project</b><span></span></div>
 
