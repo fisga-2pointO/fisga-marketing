@@ -304,6 +304,34 @@ nav.on-dark .nav-links a:hover{color:#fff}
 @media(max-width:768px){.fiw-output-grid{grid-template-columns:repeat(2,1fr)}.fiw-layer-meta{min-width:120px}.fiw-chat-scope{display:none}.fiw-msg-user,.fiw-msg-fisga{max-width:88%}}
 @media(max-width:480px){.fiw-output-grid{grid-template-columns:1fr 1fr}.fiw-layer-row{flex-wrap:wrap;gap:8px}}
 
+/* KNOWLEDGE BASE */
+#kb{background:var(--bg);padding:120px 6vw}
+.kb-org{border:1px solid var(--border2);border-radius:6px;background:var(--bg2);padding:24px;margin-bottom:14px}
+.kb-org-head{display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+.kb-badge{font-family:var(--title);font-size:8px;letter-spacing:0.12em;text-transform:uppercase;background:var(--yellow);color:var(--black);border-radius:3px;padding:4px 9px}
+.kb-org-name{display:inline-flex;align-items:center;gap:7px;background:var(--black);color:#fff;border-radius:4px;padding:5px 13px;font-family:var(--title);font-size:12px;font-weight:400;letter-spacing:0.04em}
+.kb-org-dot{width:6px;height:6px;border-radius:50%;background:var(--yellow);flex-shrink:0}
+.kb-org-meta{font-family:var(--title);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--lgray);margin-left:auto}
+.kb-clients{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.kb-client{border:1px solid var(--border);border-radius:5px;background:var(--bg);padding:16px 16px 18px;transition:border-color .3s,transform .35s cubic-bezier(.16,1,.3,1)}
+.kb-client:hover{border-color:var(--border2);transform:translateY(-4px)}
+.kb-client-name{font-family:var(--title);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray);margin-bottom:12px;display:flex;align-items:center;gap:7px}
+.kb-dot{width:6px;height:6px;border-radius:50%;background:#2d7a55;flex-shrink:0}
+.kb-projects{display:flex;flex-wrap:wrap;gap:7px}
+.kb-project{display:inline-flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:4px 10px;font-size:11px;color:var(--mid)}
+.kb-cross{display:flex;align-items:center;justify-content:center;gap:12px;margin:24px 0 56px;font-family:var(--title);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid)}
+.kb-cross span{height:1px;flex:1;max-width:120px;background:var(--border2)}
+.kb-cross b{font-weight:500;color:var(--black)}
+.kb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.kb-card{background:var(--bg2);padding:28px 24px;position:relative;overflow:hidden;transition:background .3s}
+.kb-card:hover{background:#fff}
+.kb-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.kb-card:hover::before{transform:scaleX(1)}
+.kb-card-tag{font-family:var(--title);font-size:8px;letter-spacing:0.12em;text-transform:uppercase;background:var(--yellow);color:var(--black);border-radius:3px;padding:2px 6px;display:inline-block;margin-bottom:12px}
+.kb-card-title{font-family:var(--title);font-size:15px;font-weight:300;letter-spacing:0.01em;color:var(--black);margin-bottom:6px}
+.kb-card-sub{font-size:11px;line-height:1.6;color:var(--lgray)}
+@media(max-width:768px){.kb-clients{grid-template-columns:1fr}.kb-grid{grid-template-columns:repeat(2,1fr)}}
+
 /* PROOF — white */
 #proof{background:var(--bg2);padding:120px 0 0}
 .proof-track-wrap{overflow:hidden}
@@ -846,6 +874,60 @@ footer{background:var(--black);padding:80px 6vw 40px}
   </div>
 
   <p class="us-note reveal">Currently serving US-based CPG and operator teams.</p>
+</section>
+
+<!-- KNOWLEDGE BASE -->
+<section id="kb">
+  <div class="sec-eye reveal">The Knowledge Base</div>
+  <h2 class="sec-h reveal">One organization.<br><em>Infinite context.</em></h2>
+  <p class="what-sub reveal">Stand up your organization, add every client, and run a project for each decision. Interrogate insight <em>across</em> all of them at once — and the more you work, the more intelligence you build: a knowledge base that's yours alone. Upload your documents to ground each project in your own context today, with live integrations on the way. From the first question to the final call, Fisga is your decision intelligence partner.</p>
+
+  <!-- Nested structure: Organization → Clients → Projects -->
+  <div class="kb-org reveal">
+    <div class="kb-org-head">
+      <span class="kb-badge">Your Organization</span>
+      <span class="kb-org-name"><span class="kb-org-dot"></span>Acme Strategy Group</span>
+      <span class="kb-org-meta">3 clients · 9 projects</span>
+    </div>
+    <div class="kb-clients">
+      <div class="kb-client">
+        <div class="kb-client-name"><span class="kb-dot"></span>Client — Verdant Foods</div>
+        <div class="kb-projects">
+          <span class="kb-project">Plant-based launch</span>
+          <span class="kb-project">Pricing study</span>
+          <span class="kb-project">TX feasibility</span>
+        </div>
+      </div>
+      <div class="kb-client">
+        <div class="kb-client-name"><span class="kb-dot"></span>Client — Northwind Retail</div>
+        <div class="kb-projects">
+          <span class="kb-project">Segmentation</span>
+          <span class="kb-project">GTM plan</span>
+          <span class="kb-project">Brand position</span>
+        </div>
+      </div>
+      <div class="kb-client">
+        <div class="kb-client-name"><span class="kb-dot"></span>Client — PiSA Animal</div>
+        <div class="kb-projects">
+          <span class="kb-project">US rollout</span>
+          <span class="kb-project">Channel mix</span>
+          <span class="kb-project">Buyer personas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kb-cross reveal"><span></span>Interact <b>across every client &amp; project</b><span></span></div>
+
+  <!-- Capability grid -->
+  <div class="kb-grid reveal">
+    <div class="kb-card"><div class="kb-card-tag">Across</div><div class="kb-card-title">Cross-context intelligence</div><div class="kb-card-sub">Query every client and project at once</div></div>
+    <div class="kb-card"><div class="kb-card-tag">Compounds</div><div class="kb-card-title">A knowledge base that compounds</div><div class="kb-card-sub">Every study adds context for the next question</div></div>
+    <div class="kb-card"><div class="kb-card-tag">Your context</div><div class="kb-card-title">Grounded in your documents</div><div class="kb-card-sub">Upload your files today · live integrations soon</div></div>
+    <div class="kb-card"><div class="kb-card-tag">End-to-end</div><div class="kb-card-title">Partner, start to finish</div><div class="kb-card-sub">From first question to final decision</div></div>
+  </div>
+
+  <p class="us-note reveal">Fisga — your decision intelligence partner, beginning to end.</p>
 </section>
 
 <!-- PROOF -->
