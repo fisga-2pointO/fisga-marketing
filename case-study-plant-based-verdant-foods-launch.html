@@ -1371,6 +1371,21 @@
     .nav-links { display: none !important; }
   }
 
+
+  /* ── More studies (prev / next) ── */
+  .study-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .study-nav-card { background: var(--bg2); padding: 32px; display: flex; flex-direction: column; gap: 10px; text-decoration: none; position: relative; overflow: hidden; transition: background .3s; }
+  .study-nav-card:hover { background: #fff; }
+  .study-nav-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--yellow); transform: scaleX(0); transform-origin: left; transition: transform .4s cubic-bezier(.16,1,.3,1); }
+  .study-nav-card:hover::before { transform: scaleX(1); }
+  .study-nav-card--next { text-align: right; align-items: flex-end; }
+  .study-nav-dir { font-family: var(--title); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lgray); }
+  .study-nav-tag { font-family: var(--title); font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
+  .study-nav-title { font-family: var(--title); font-size: 21px; font-weight: 200; line-height: 1.2; letter-spacing: -0.01em; color: var(--black); max-width: 95%; }
+  .study-nav-all { display: inline-block; margin-top: 28px; font-family: var(--title); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--border2); padding-bottom: 4px; transition: opacity .2s; }
+  .study-nav-all:hover { opacity: 0.6; }
+  @media (max-width: 768px) { .study-nav { grid-template-columns: 1fr; } .study-nav-card--next { text-align: left; align-items: flex-start; } }
+
 </style>
 </head>
 <body>
@@ -2065,6 +2080,32 @@
     <p class="body-text" data-anim="up" style="max-width: 760px; margin-top: 8px;">
       The alignment between Fisga&#x27;s synthetic panel and published public datasets validates the study&#x27;s core conclusions. The methodology — grounding 1,000 synthetic consumer profiles in Census, BLS, FRED, CDC BRFSS, and GSS data — produces findings that match independently observed market behavior at the category level, while offering segment-level precision that aggregate public data cannot. <strong>This is the difference between directional research and defensible research.</strong>
     </p>
+  </div>
+</section>
+
+
+<!-- ─── MORE STUDIES ─── -->
+<section class="section section--bg2" aria-labelledby="more-studies-heading">
+  <div class="section-inner">
+    <div class="section-eyebrow" data-anim="up">
+      <p class="eyebrow">Keep Exploring</p>
+    </div>
+    <h2 data-anim="up" id="more-studies-heading" class="section-heading" style="margin-bottom: 40px;">
+      Another decision.<br><em>Another answer.</em>
+    </h2>
+    <div class="study-nav" data-anim="up">
+      <a class="study-nav-card" href="/case-study-go-to-market-pricing-porsche-912.html">
+        <span class="study-nav-dir">← Previous study</span>
+        <span class="study-nav-tag">Feasibility · Automotive</span>
+        <span class="study-nav-title">Einstieg's $3M go-to-market call</span>
+      </a>
+      <a class="study-nav-card study-nav-card--next" href="/case-study-concept-testing-nhmu-traveling-exhibition.html">
+        <span class="study-nav-dir">Next study →</span>
+        <span class="study-nav-tag">Concept Testing · Cultural Institution</span>
+        <span class="study-nav-title">NHMU's marquee exhibition pick</span>
+      </a>
+    </div>
+    <a class="study-nav-all" href="https://fisga.co/#proof">View all studies →</a>
   </div>
 </section>
 
