@@ -1524,7 +1524,7 @@ nav.on-dark .nav-links a:hover{color:#fff}
         <span>Fisga — Segment intelligence output</span>
         <span>4,000 consumer profiles · 12 segments · confidence ranges</span>
       </div>
-      <video class="segment-video" autoplay muted loop playsinline preload="auto" aria-label="Fisga segment intelligence demo — 12 buyer segments scored by purchase readiness, intent, and conversion probability">
+      <video class="segment-video" muted loop playsinline preload="auto" aria-label="Fisga segment intelligence demo — 12 buyer segments scored by purchase readiness, intent, and conversion probability">
         <source src="einstieg-segment-demo.mp4" type="video/mp4">
       </video>
     </div>
@@ -2070,6 +2070,26 @@ nav.on-dark .nav-links a:hover{color:#fff}
   });
 
 })();
+</script>
+
+<script>
+  /* Start the segment demo from the beginning when it scrolls into view; pause when off-screen. */
+  (function(){
+    var v = document.querySelector('.segment-video');
+    if(!v) return;
+    var started = false;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          if(!started){ started = true; try{ v.currentTime = 0; }catch(_){} }
+          var p = v.play(); if(p && p.catch) p.catch(function(){});
+        } else {
+          v.pause();
+        }
+      });
+    }, { threshold: 0.35 });
+    io.observe(v);
+  })();
 </script>
 
 </body>
