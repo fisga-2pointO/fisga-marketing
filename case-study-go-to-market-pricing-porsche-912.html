@@ -678,7 +678,19 @@ nav.on-dark .nav-links a:hover{color:#fff}
     max-width: 300px;
     line-height: 1.6;
   }
-  .segment-video { width: 100%; display: block; background: #000; }
+  .segment-video { width: 100%; display: block; background: #000; position: relative; z-index: 1; }
+  .segment-video-wrap { position: relative; line-height: 0; }
+  .segment-play {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 76px; height: 76px; border-radius: 50%;
+    background: rgba(12,12,10,0.55); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    border: 1px solid rgba(235,252,114,0.5);
+    display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 3;
+    transition: transform .2s ease, background .2s ease, opacity .35s ease, visibility .35s ease;
+  }
+  .segment-play:hover { transform: translate(-50%,-50%) scale(1.07); background: rgba(12,12,10,0.72); border-color: rgba(235,252,114,0.85); }
+  .segment-play svg { width: 28px; height: 28px; margin-left: 3px; }
+  .segment-play.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 
   /* ─── PRICE PANEL ─── */
   .price-panel {
@@ -1524,9 +1536,14 @@ nav.on-dark .nav-links a:hover{color:#fff}
         <span>Fisga — Segment intelligence output</span>
         <span>4,000 consumer profiles · 12 segments · confidence ranges</span>
       </div>
-      <video class="segment-video" muted loop playsinline preload="auto" aria-label="Fisga segment intelligence demo — 12 buyer segments scored by purchase readiness, intent, and conversion probability">
-        <source src="einstieg-segment-demo.mp4" type="video/mp4">
-      </video>
+      <div class="segment-video-wrap">
+        <video class="segment-video" muted loop playsinline preload="auto" poster="einstieg-segment-poster.jpg" aria-label="Fisga segment intelligence demo — 12 buyer segments scored by purchase readiness, intent, and conversion probability">
+          <source src="einstieg-segment-demo.mp4" type="video/mp4">
+        </video>
+        <button class="segment-play" type="button" aria-label="Play the Fisga segment demo">
+          <svg viewBox="0 0 24 24" fill="#EBFC72" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
     </div>
 
     <p class="body-text" data-anim="up" style="max-width: 720px;">
@@ -2073,22 +2090,16 @@ nav.on-dark .nav-links a:hover{color:#fff}
 </script>
 
 <script>
-  /* Start the segment demo from the beginning when it scrolls into view; pause when off-screen. */
+  /* Segment demo: hold on the first frame; play from the start when the play button is clicked. */
   (function(){
     var v = document.querySelector('.segment-video');
-    if(!v) return;
-    var started = false;
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          if(!started){ started = true; try{ v.currentTime = 0; }catch(_){} }
-          var p = v.play(); if(p && p.catch) p.catch(function(){});
-        } else {
-          v.pause();
-        }
-      });
-    }, { threshold: 0.35 });
-    io.observe(v);
+    var btn = document.querySelector('.segment-play');
+    if(!v || !btn) return;
+    btn.addEventListener('click', function(){
+      try{ v.currentTime = 0; }catch(_){}
+      var p = v.play(); if(p && p.catch) p.catch(function(){});
+      btn.classList.add('hidden');
+    });
   })();
 </script>
 
