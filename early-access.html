@@ -548,7 +548,8 @@ footer{background:var(--black);padding:80px 6vw 40px}
 
 /* ===== EARLY-ACCESS PAGE — NEW CSS (appended) ===== */
 /* (a) rotating word */
-.rot-word{display:inline-block;position:relative;color:var(--yellow);overflow:hidden;vertical-align:bottom;min-width:6.5ch;height:1.05em;line-height:1.05em}
+.rot-word{display:inline-block;position:relative;color:var(--yellow);overflow:hidden;vertical-align:bottom;white-space:nowrap;min-width:12ch;height:1.05em;line-height:1.05em}
+.ea-nowrap{white-space:nowrap}
 .rot-word__inner{display:inline-block;transition:transform 0.45s cubic-bezier(0.16,1,0.3,1),opacity 0.45s ease}
 .rot-word.is-out .rot-word__inner{transform:translateY(-100%);opacity:0}
 .rot-word.is-in .rot-word__inner{transform:translateY(100%);opacity:0;transition:none}
@@ -560,7 +561,9 @@ footer{background:var(--black);padding:80px 6vw 40px}
 .ph-thumb .ph-label{font-size:8px;letter-spacing:0.2em}
 /* (c) hero split layout + 2x2 grid */
 .ea-hero{min-height:100vh;background:var(--black);display:flex;align-items:center;padding:120px 6vw;position:relative;overflow:hidden}
-.ea-hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:72px;align-items:center;width:100%;max-width:1320px;margin:0 auto}
+.ph-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;border-radius:0;align-items:flex-end;justify-content:flex-end;padding:0 32px 32px}
+.ea-hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,10,8,0.95) 0%,rgba(10,10,8,0.82) 42%,rgba(10,10,8,0.4) 100%)}
+.ea-hero-content{position:relative;z-index:2;max-width:780px;width:100%}
 .ea-hook{font-family:var(--title);font-size:clamp(13px,1.4vw,16px);font-weight:300;font-style:italic;color:rgba(255,255,255,0.5);margin-bottom:18px;line-height:1.5}
 .ea-hero .sec-h{color:#fff;margin-bottom:24px}
 .ea-sub{font-family:var(--body);font-size:clamp(15px,1.3vw,17px);font-weight:400;line-height:1.8;color:rgba(255,255,255,0.78);max-width:520px;margin-bottom:20px}
@@ -608,11 +611,12 @@ footer{background:var(--black);padding:80px 6vw 40px}
 .ea-close .ea-form,.ea-close .ea-form-ok{margin-left:auto;margin-right:auto;text-align:left}
 @media(max-width:768px){
   .ea-hero{padding:100px 24px 64px;min-height:auto}
-  .ea-hero-grid{grid-template-columns:1fr;gap:40px}
+  .ea-hero-content{max-width:100%}
   .ea-sec,.ea-close{padding:80px 24px}
   .ea-cards-3,.ea-grid-2x2{grid-template-columns:1fr}
   .ea-form{max-width:100%}
-  .rot-word{min-width:5ch}
+  .ea-nowrap{white-space:normal}
+  .rot-word{min-width:0}
 }
 /* ── Section theme rhythm: light / grey / white / dark / yellow (mirrors fisga.co) ── */
 /* Hero (dark) */
@@ -685,30 +689,27 @@ footer{background:var(--black);padding:80px 6vw 40px}
 
 <!-- SECTION 1 — HERO -->
 <section class="ea-hero reveal" id="ea-form">
-  <div class="ea-hero-grid">
-    <div class="ea-hero-copy">
-      <div class="sec-eye">For independent consultants and advisors</div>
-      <p class="ea-hook">The question you didn't prepare for is the one they remember.</p>
-      <h1 class="sec-h">Be the most informed person in the <span class="rot-word" id="rotWord"><span class="rot-word__inner">room</span></span></h1>
-      <p class="ea-sub">Fisga builds insights around your client's specific market before you walk in. What you bring into that room is yours — shaped by their geography, their buyer, their decision. No one else has it.</p>
-      <p class="ea-trust">Grounded in the same data economists and national brands rely on.</p>
-      <form id="ea-form-hero" class="ea-form" novalidate>
-        <input class="form-field" type="email" name="email" placeholder="Your work email" required autocomplete="email">
-        <select class="form-field" name="role" required>
-          <option value="" disabled selected>What best describes you?</option>
-          <option>Independent consultant</option>
-          <option>Agency or consultancy</option>
-          <option>Brand or operator</option>
-          <option>Investor or advisor</option>
-        </select>
-        <button type="submit" class="btn-y">Request Early Access</button>
-        <p class="ea-form-err" id="ea-form-hero-err"></p>
-      </form>
-      <div class="ea-form-ok" id="ea-form-hero-ok"><span class="ok-mark">Request received</span>You're on the list. Expect a message from us personally.</div>
-    </div>
-    <div class="ea-hero-visual">
-      <div class="ph ph-169"><span class="ph-label">[PLACEHOLDER: Hero video or animation — Fisga brand motion asset, approx 16:9, autoplay muted loop]</span></div>
-    </div>
+  <div class="ph ph-bg"><span class="ph-label">[PLACEHOLDER: Hero video or animation — Fisga brand motion asset, full-bleed background, autoplay muted loop]</span></div>
+  <div class="ea-hero-overlay"></div>
+  <div class="ea-hero-content">
+    <div class="sec-eye">For independent consultants and advisors</div>
+    <p class="ea-hook">The question you didn't prepare for is the one they remember.</p>
+    <h1 class="sec-h">Be the most informed person <span class="ea-nowrap">in the <span class="rot-word" id="rotWord"><span class="rot-word__inner">room</span></span></span></h1>
+    <p class="ea-sub">Fisga builds insights around your client's specific market before you walk in. What you bring into that room is yours — shaped by their geography, their buyer, their decision. No one else has it.</p>
+    <p class="ea-trust">Grounded in the same data economists and national brands rely on.</p>
+    <form id="ea-form-hero" class="ea-form" novalidate>
+      <input class="form-field" type="email" name="email" placeholder="Your work email" required autocomplete="email">
+      <select class="form-field" name="role" required>
+        <option value="" disabled selected>What best describes you?</option>
+        <option>Independent consultant</option>
+        <option>Agency or consultancy</option>
+        <option>Brand or operator</option>
+        <option>Investor or advisor</option>
+      </select>
+      <button type="submit" class="btn-y">Request Early Access</button>
+      <p class="ea-form-err" id="ea-form-hero-err"></p>
+    </form>
+    <div class="ea-form-ok" id="ea-form-hero-ok"><span class="ok-mark">Request received</span>You're on the list. Expect a message from us personally.</div>
   </div>
 </section>
 
