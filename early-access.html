@@ -562,6 +562,7 @@ footer{background:var(--black);padding:80px 6vw 40px}
 /* (c) hero split layout + 2x2 grid */
 .ea-hero{min-height:100vh;background:var(--black);display:flex;align-items:center;padding:120px 6vw;position:relative;overflow:hidden}
 .ph-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;border-radius:0;align-items:flex-end;justify-content:flex-end;padding:0 32px 32px}
+.ea-hero-video{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover}
 .ea-hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,10,8,0.95) 0%,rgba(10,10,8,0.82) 42%,rgba(10,10,8,0.4) 100%)}
 .ea-hero-content{position:relative;z-index:2;max-width:960px;width:100%}
 .ea-hook{font-family:var(--title);font-size:clamp(13px,1.4vw,16px);font-weight:300;font-style:italic;color:rgba(255,255,255,0.5);margin-bottom:18px;line-height:1.5}
@@ -689,7 +690,9 @@ footer{background:var(--black);padding:80px 6vw 40px}
 
 <!-- SECTION 1 — HERO -->
 <section class="ea-hero reveal" id="ea-form">
-  <div class="ph ph-bg"><span class="ph-label">[PLACEHOLDER: Hero video or animation — Fisga brand motion asset, full-bleed background, autoplay muted loop]</span></div>
+  <video class="ea-hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="early-access-hero.mp4" type="video/mp4">
+  </video>
   <div class="ea-hero-overlay"></div>
   <div class="ea-hero-content">
     <div class="sec-eye">For independent consultants and advisors</div>
