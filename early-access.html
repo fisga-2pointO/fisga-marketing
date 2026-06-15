@@ -866,12 +866,12 @@ function bindEarlyAccessForm(formId){
     var oldLabel=btn.textContent;
     btn.textContent='Sending…';
     try{
-      var res=await fetch('https://web-production-f4bd.up.railway.app/api/early-access/submit',{
+      var res=await fetch('https://fcvbchxnbikqcatsfpeh.supabase.co/rest/v1/early_access_waitlist',{
         method:'POST',
-        headers:{'Content-Type':'application/json'},
+        headers:{'Content-Type':'application/json','apikey':'YOUR_ANON_KEY','Authorization':'Bearer YOUR_ANON_KEY','Prefer':'return=minimal'},
         body:JSON.stringify({email:email,role:role,source:'early-access-page'})
       });
-      if(!res.ok) throw new Error('bad response');
+      if(!res.ok && res.status!==409) throw new Error('bad response');
       form.style.display='none';
       if(okEl) okEl.style.display='block';
     }catch(err){
