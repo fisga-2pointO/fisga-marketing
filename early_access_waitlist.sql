@@ -5,11 +5,17 @@
 
 create table if not exists public.early_access_waitlist (
   id         uuid primary key default gen_random_uuid(),
+  name       text,
+  company    text,
   email      text not null unique,
   role       text,
   source     text default 'early-access-page',
   created_at timestamptz not null default now()
 );
+
+-- If the table already exists, add the new columns:
+alter table public.early_access_waitlist add column if not exists name    text;
+alter table public.early_access_waitlist add column if not exists company text;
 
 alter table public.early_access_waitlist enable row level security;
 

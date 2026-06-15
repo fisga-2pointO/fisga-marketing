@@ -708,6 +708,8 @@ footer{background:var(--black);padding:80px 6vw 40px}
     <p class="ea-sub">Fisga builds insights around your client's specific market before you walk in. What you bring into that room is yours — shaped by their geography, their buyer, their decision. No one else has it.</p>
     <p class="ea-trust">Grounded in the same data economists and national brands rely on.</p>
     <form id="ea-form-hero" class="ea-form" novalidate>
+      <input class="form-field" type="text" name="name" placeholder="Your name" required autocomplete="name">
+      <input class="form-field" type="text" name="company" placeholder="Company or consultancy" required autocomplete="organization">
       <input class="form-field" type="email" name="email" placeholder="Your work email" required autocomplete="email">
       <select class="form-field" name="role" required>
         <option value="" disabled selected>What best describes you?</option>
@@ -876,19 +878,6 @@ footer{background:var(--black);padding:80px 6vw 40px}
   </div>
 </section>
 
-<!-- SECTION 3 — WHAT YOU WALK IN WITH -->
-<section class="ea-sec ea-sec--white reveal">
-  <div class="ea-wrap">
-    <div class="sec-eye">What Fisga builds for you</div>
-    <div class="ea-grid-2x2">
-      <div class="ea-out-card"><div class="ph ph-thumb"><span class="ph-label">[PLACEHOLDER: Output preview thumbnail]</span></div><h3>Who your client's buyer actually is</h3><p>Segmented, specific, grounded in real population data</p></div>
-      <div class="ea-out-card"><div class="ph ph-thumb"><span class="ph-label">[PLACEHOLDER: Output preview thumbnail]</span></div><h3>Where the brand should stand and why</h3><p>Positioning with a defensible point of view</p></div>
-      <div class="ea-out-card"><div class="ph ph-thumb"><span class="ph-label">[PLACEHOLDER: Output preview thumbnail]</span></div><h3>Whether the move makes sense</h3><p>Feasibility before capital is committed</p></div>
-      <div class="ea-out-card"><div class="ph ph-thumb"><span class="ph-label">[PLACEHOLDER: Output preview thumbnail]</span></div><h3>Something boardroom-ready from day one</h3><p>An executive memo your client keeps</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- SECTION 4 — THE DATA BEHIND IT -->
 <section class="ea-sec ea-sec--dark reveal" id="ea-sec-data">
   <div class="ea-wrap">
@@ -914,6 +903,8 @@ footer{background:var(--black);padding:80px 6vw 40px}
 <section class="ea-close reveal" id="ea-close">
   <h2 class="ea-close-h">The next question you don't see coming — prepare for it.</h2>
   <form id="ea-form-closing" class="ea-form" novalidate>
+    <input class="form-field" type="text" name="name" placeholder="Your name" required autocomplete="name">
+    <input class="form-field" type="text" name="company" placeholder="Company or consultancy" required autocomplete="organization">
     <input class="form-field" type="email" name="email" placeholder="Your work email" required autocomplete="email">
     <select class="form-field" name="role" required>
       <option value="" disabled selected>What best describes you?</option>
@@ -1007,8 +998,14 @@ function bindEarlyAccessForm(formId){
   form.addEventListener('submit',async function(e){
     e.preventDefault();
     if(errEl) errEl.style.display='none';
+    var name=(form.querySelector('input[name=name]').value||'').trim();
+    var company=(form.querySelector('input[name=company]').value||'').trim();
     var email=(form.querySelector('input[type=email]').value||'').trim();
     var role=(form.querySelector('select').value||'').trim();
+    if(!name||!company){
+      if(errEl){errEl.textContent='Please add your name and company.';errEl.style.display='block';}
+      return;
+    }
     if(!emailRe.test(email)){
       if(errEl){errEl.textContent='Please enter a valid work email.';errEl.style.display='block';}
       return;
@@ -1020,7 +1017,7 @@ function bindEarlyAccessForm(formId){
       var res=await fetch('https://fcvbchxnbikqcatsfpeh.supabase.co/rest/v1/early_access_waitlist',{
         method:'POST',
         headers:{'Content-Type':'application/json','apikey':'YOUR_ANON_KEY','Authorization':'Bearer YOUR_ANON_KEY','Prefer':'return=minimal'},
-        body:JSON.stringify({email:email,role:role,source:'early-access-page'})
+        body:JSON.stringify({name:name,company:company,email:email,role:role,source:'early-access-page'})
       });
       if(!res.ok && res.status!==409) throw new Error('bad response');
       form.style.display='none';
