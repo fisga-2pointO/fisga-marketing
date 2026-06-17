@@ -214,10 +214,15 @@ nav.on-dark .nav-links a:hover{color:#fff}
 .hero-content{position:relative;z-index:2;max-width:900px}
 .hero-tag{font-family:var(--title);font-size:9px;letter-spacing:0.4em;color:var(--yellow);text-transform:uppercase;opacity:0;margin-bottom:32px;display:flex;align-items:center;gap:14px}
 .hero-tag::before{content:'';width:28px;height:1px;background:var(--yellow);opacity:0.5}
-.hero-h1{font-family:var(--title);font-size:clamp(44px,6.2vw,88px);font-weight:300;line-height:0.95;letter-spacing:-0.02em;color:#fff}
+.hero-h1{font-family:var(--title);font-size:clamp(34px,5.0vw,68px);font-weight:300;line-height:0.95;letter-spacing:-0.02em;color:#fff}
 .hero-h1 em{font-style:italic;color:rgba(255,255,255,0.55)}
 .hero-h1 strong{font-weight:200;color:var(--yellow)}
-.hero-sub{font-family:var(--body);font-size:clamp(15px,1.4vw,18px);font-weight:400;line-height:1.85;color:rgba(255,255,255,0.9);max-width:500px;margin-top:28px}
+.hero-sub{font-family:var(--body);font-size:clamp(22px,2.3vw,32px);font-weight:500;line-height:1.35;color:#fff;max-width:720px;margin-top:26px}
+.hero-rotator{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-top:24px;min-height:1.5em;transition:opacity .45s ease}
+.hero-rotator.is-fading{opacity:0}
+.hero-rotator .hr-q{font-family:var(--title);font-weight:400;font-size:clamp(22px,2.3vw,32px);color:#fff;position:relative;padding-left:24px}
+.hero-rotator .hr-q::before{content:"";position:absolute;left:0;top:0.5em;width:11px;height:11px;background:var(--yellow);border-radius:2px}
+.hero-rotator .hr-tag{font-family:var(--body);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,0.42);align-self:center}
 .hero-actions{display:flex;gap:12px;margin-top:48px}
 .btn-y{background:var(--yellow);color:var(--black);border:none;padding:15px 34px;font-family:var(--title);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:transform 0.2s,box-shadow 0.2s}
 .btn-y:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(235,252,114,0.28)}
@@ -534,8 +539,8 @@ footer{background:var(--black);padding:80px 6vw 40px}
 
   /* Hero */
   #hero{padding:100px 24px 80px;justify-content:flex-end}
-  .hero-h1{font-size:clamp(36px,10vw,56px)}
-  .hero-sub{font-size:15px;margin-top:20px}
+  .hero-h1{font-size:clamp(28px,8vw,44px)}
+  .hero-sub{font-size:20px;margin-top:18px}
   .hero-actions{flex-direction:column;gap:10px;align-items:flex-start}
   .btn-y,.btn-ghost-w{padding:14px 28px;font-size:11px;width:auto}
   .hero-scroll{display:none}
@@ -740,6 +745,8 @@ footer{background:var(--black);padding:80px 6vw 40px}
   <div class="hero-content">
     <p class="hero-tag">Decision Intelligence</p>
     <h1 class="hero-h1">Every hard decision<br>puts you in <em>the same place.</em><br><strong>Not enough signal.<br>Too much at stake.</strong></h1>
+    <div class="hero-rotator" id="heroRotator" aria-live="polite"><span class="hr-q">&ldquo;Who actually buys this?&rdquo;</span></div>
+    <p class="hero-sub">Turn any question into a grounded answer.</p>
     <div class="hero-actions">
       <a href="#convert" class="btn-y">See How It Works</a>
       <a href="#proof" class="btn-ghost-w">View a Study</a>
@@ -1502,5 +1509,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   </span>
 </div>
 
+
+<script>(function(){var rot=document.getElementById("heroRotator");if(!rot)return;var q=rot.querySelector(".hr-q");var items=[["\u201cWhat can we charge?\u201d","Pricing"],["\u201cWho actually buys this?\u201d","Segmentation"],["\u201cHow do we stand out?\u201d","Positioning"],["\u201cWill this concept land?\u201d","Concept Testing"],["\u201cHow do they really feel \u2014 and use it?\u201d","Attitude & Usage"],["\u201cIs there even a market?\u201d","Feasibility"]];var i=0,paused=false;if(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;rot.addEventListener("mouseenter",function(){paused=true;});rot.addEventListener("mouseleave",function(){paused=false;});setInterval(function(){if(paused)return;rot.classList.add("is-fading");setTimeout(function(){i=(i+1)%items.length;q.textContent=items[i][0];rot.classList.remove("is-fading");},450);},2800);})();</script>
 </body>
 </html>
