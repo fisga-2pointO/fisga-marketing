@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Use and Processing | Fisga</title>
+<style>
+  :root{
+    --accent:#EBFC72;
+    --bg:#F7F7F4;
+    --ink:#0A0A0A;
+    --muted:#55564f;
+    --line:#e2e2dc;
+    --maxw:820px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans','Raleway',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:64px 24px 96px;}
+  header.doc{border-bottom:3px solid var(--accent);padding-bottom:28px;margin-bottom:40px;}
+  .brand{font-family:'Raleway',sans-serif;font-weight:800;letter-spacing:-.02em;font-size:20px;text-transform:lowercase;}
+  .brand span{background:var(--accent);padding:0 6px;border-radius:3px;}
+  h1{font-family:'Raleway',sans-serif;font-weight:800;font-size:38px;line-height:1.1;letter-spacing:-.02em;margin:22px 0 10px;}
+  .meta{color:var(--muted);font-size:14px;}
+  h2{font-family:'Raleway',sans-serif;font-weight:700;font-size:22px;margin:44px 0 6px;letter-spacing:-.01em;scroll-margin-top:20px;}
+  h3{font-weight:700;font-size:17px;margin:26px 0 4px;}
+  p,li{color:#1c1d18;}
+  ul,ol{padding-left:22px;}
+  li{margin:6px 0;}
+  a{color:#0a0a0a;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;}
+  .lead{font-size:17px;color:var(--muted);}
+  .callout{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:16px 20px;margin:22px 0;font-size:15px;}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 26px;margin:32px 0;}
+  .toc h4{margin:0 0 10px;font-family:'Raleway',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:var(--muted);}
+  .toc ol{columns:2;column-gap:32px;font-size:14px;margin:0;}
+  .toc a{text-decoration:none;}
+  .toc a:hover{text-decoration:underline;}
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+  th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:#fbfbf8;font-family:'Raleway',sans-serif;font-weight:700;font-size:13px;}
+  tr:last-child td{border-bottom:none;}
+  strong{font-weight:700;}
+  .upper{text-transform:uppercase;font-size:14px;letter-spacing:.02em;}
+  footer.doc{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;}
+  @media(max-width:640px){.toc ol{columns:1;}h1{font-size:30px;}table{font-size:13px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="doc">
+    <div class="brand"><span>fisga</span></div>
+    <h1>Data Use and Processing</h1>
+    <div class="meta">Effective date: July 14, 2026 &nbsp;•&nbsp; Last updated: July 14, 2026</div>
+  </header>
+
+  <p class="lead">This page explains, in practical terms, what data the Fisga platform processes, who processes it, where it lives, how it is protected, and what we and our customers are each responsible for. It supports our <a href="/terms-of-service">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a> and is written for buyers, security reviewers, and procurement teams.</p>
+
+  <div class="callout">
+    <strong>The short version.</strong> Fisga (a product of Micstura LLC) processes customer content only to run the studies you request. Data is stored in the United States. We do not sell data and we do not use your content to train AI models. A Data Processing Addendum is available for contract customers on request.
+  </div>
+
+  <div class="toc">
+    <h4>Contents</h4>
+    <ol>
+      <li><a href="#d1">Roles</a></li>
+      <li><a href="#d2">Data We Process</a></li>
+      <li><a href="#d3">Purpose and Scope</a></li>
+      <li><a href="#d4">Subprocessors</a></li>
+      <li><a href="#d5">No Model Training on Your Content</a></li>
+      <li><a href="#d6">Security Measures</a></li>
+      <li><a href="#d7">Data Residency</a></li>
+      <li><a href="#d8">Retention and Deletion</a></li>
+      <li><a href="#d9">Incident Notification</a></li>
+      <li><a href="#d10">Customer Responsibilities</a></li>
+      <li><a href="#d11">Data Processing Addendum</a></li>
+      <li><a href="#d12">Changes and Contact</a></li>
+    </ol>
+  </div>
+
+  <h2 id="d1">1. Roles</h2>
+  <p>For the documents, briefs, study configurations, and other materials a customer uploads ("Customer Content"), Micstura LLC acts as a service provider and processor. The customer decides what to upload and for what purpose, and we process that content on the customer's behalf and per its instructions. For account, billing, and website analytics data, we act as a controller. This split is described in our <a href="/privacy-policy">Privacy Policy</a>.</p>
+
+  <h2 id="d2">2. Data We Process</h2>
+  <table>
+    <thead><tr><th>Category</th><th>Examples</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td>Account data</td><td>Name, business email, organization, role, hashed credentials</td><td>Controller</td></tr>
+      <tr><td>Customer Content</td><td>Uploaded documents, briefs, study parameters, prompts, and any personal information a customer chooses to include</td><td>Processor</td></tr>
+      <tr><td>Generated Outputs</td><td>Modeled panels, analyses, and reports produced from customer inputs</td><td>Processor</td></tr>
+      <tr><td>Usage and telemetry</td><td>Requests to study and chat features, timestamps, credits used, prompt and response metadata, diagnostics</td><td>Controller</td></tr>
+      <tr><td>Billing data</td><td>Plan, transaction status, last four digits of card (full card data handled by the payment processor)</td><td>Controller</td></tr>
+      <tr><td>Log and device data</td><td>IP address, browser type, access logs</td><td>Controller</td></tr>
+    </tbody>
+  </table>
+  <p>The federal reference datasets that ground the modeling (for example U.S. Census, BLS, BRFSS, FRED, and GSS) are public data sources and do not contain your Customer Content.</p>
+
+  <h2 id="d3">3. Purpose and Scope</h2>
+  <p>We process Customer Content solely to provide the Service: to run the studies you configure, to generate Outputs, and to store and make those Outputs available to you. We also process operational data to secure, maintain, debug, and improve the Service. We do not use Customer Content for advertising, and we do not sell it.</p>
+
+  <h2 id="d4">4. Subprocessors</h2>
+  <p>We engage the following subprocessors to deliver the Service. Each is bound by contractual obligations to protect data and to process it only to provide their service to us.</p>
+  <table>
+    <thead><tr><th>Subprocessor</th><th>Function</th><th>Data processed</th><th>Location</th></tr></thead>
+    <tbody>
+      <tr><td>OpenAI</td><td>AI model APIs (panel generation, content features)</td><td>Inputs and relevant Customer Content sent for generation</td><td>United States</td></tr>
+      <tr><td>Anthropic</td><td>AI model APIs (platform and assistant features)</td><td>Inputs and relevant Customer Content sent for generation</td><td>United States</td></tr>
+      <tr><td>Supabase</td><td>Database and file storage</td><td>Account data, Customer Content, Outputs</td><td>United States</td></tr>
+      <tr><td>Railway</td><td>Application hosting and deployment</td><td>Application traffic and runtime data</td><td>United States</td></tr>
+      <tr><td>Langfuse</td><td>Prompt management and observability/telemetry</td><td>Prompt and response metadata and content for requests</td><td>United States</td></tr>
+      <tr><td>SerpAPI</td><td>Third-party search and trends signals (Google Trends)</td><td>Query terms derived from study configuration</td><td>United States</td></tr>
+      <tr><td>Resend</td><td>Transactional and notification email</td><td>Recipient email and message content</td><td>United States</td></tr>
+      <tr><td>[Payment processor]</td><td>Payments and billing</td><td>Billing and payment data</td><td>United States</td></tr>
+    </tbody>
+  </table>
+  <p>We may update this list as our infrastructure evolves. For contract customers, we will provide advance notice of new subprocessors where the Data Processing Addendum requires it.</p>
+
+  <h2 id="d5">5. No Model Training on Your Content</h2>
+  <p>We access AI providers through their API tiers under terms that do not permit them to use your content to train their models. We do not use Customer Content to train our own or any third party's foundation models. Customer Content is used to generate the Outputs you request and to operate and debug the Service, not to build general-purpose models.</p>
+
+  <h2 id="d6">6. Security Measures</h2>
+  <ul>
+    <li><strong>Encryption in transit</strong> using TLS for data moving between your browser, our systems, and our subprocessors.</li>
+    <li><strong>Encryption at rest</strong> for stored data at the database and storage layer provided by our hosting and database providers.</li>
+    <li><strong>Access controls</strong> including authentication, role-based permissions, and row-level security in the database to separate customer data.</li>
+    <li><strong>Least-privilege access</strong> to production systems, restricted to personnel who need it to operate the Service.</li>
+    <li><strong>Secrets management</strong> for API keys and credentials, kept out of source control.</li>
+    <li><strong>Monitoring and logging</strong> to detect and investigate anomalies and errors.</li>
+  </ul>
+  <p>No system is perfectly secure. We continue to improve our controls as the product matures.</p>
+
+  <h2 id="d7">7. Data Residency</h2>
+  <p>Customer Content, account data, and Outputs are stored and processed in the United States. Our subprocessors process data in the United States as listed in Section 4.</p>
+
+  <h2 id="d8">8. Retention and Deletion</h2>
+  <p>We retain Customer Content for the life of your account or until you delete it. When you delete content or close your account, it is removed from active systems and purged from backups within a limited period, except where retention is required to comply with law, resolve disputes, or enforce our agreements. On termination, we make Customer Content available for export for a limited period on request before deletion. Contract customers may agree to specific retention and deletion terms in an Order Form or Data Processing Addendum.</p>
+
+  <h2 id="d9">9. Incident Notification</h2>
+  <p>If we become aware of a security incident that compromises the confidentiality, integrity, or availability of Customer Content, we will notify affected customers without undue delay and provide information reasonably available to us to help the customer meet its own obligations. Specific timelines may be set in a Data Processing Addendum.</p>
+
+  <h2 id="d10">10. Customer Responsibilities</h2>
+  <p>Because you control what you upload, you are responsible for:</p>
+  <ul>
+    <li>having the rights and permissions to upload your Customer Content and to have us process it;</li>
+    <li>not uploading regulated or highly sensitive data (such as protected health information, government-issued identifiers, or full payment card numbers) unless we have agreed in writing to receive it;</li>
+    <li>configuring access within your organization appropriately and managing your users and their permissions;</li>
+    <li>providing any notices to, and obtaining any consents from, individuals whose information you include in Customer Content;</li>
+    <li>using Outputs responsibly and consistent with our <a href="/terms-of-service">Terms of Service</a>, including not presenting Outputs as human survey results or as guaranteed predictions.</li>
+  </ul>
+
+  <h2 id="d11">11. Data Processing Addendum</h2>
+  <p>Contract customers that need a Data Processing Addendum (DPA), a subprocessor notification commitment, or a security questionnaire completed can request one at <a href="mailto:privacy@micstura.com">privacy@micstura.com</a>. We are happy to support procurement and vendor-security reviews.</p>
+
+  <h2 id="d12">12. Changes and Contact</h2>
+  <p>We may update this page as the Service and our infrastructure change. Material changes will be reflected in the "Last updated" date above.</p>
+  <p>
+    Micstura LLC<br>
+    <span class="upper">[Street address], Salt Lake City, Utah [ZIP]</span><br>
+    Data and privacy: <a href="mailto:privacy@micstura.com">privacy@micstura.com</a><br>
+    Security: <a href="mailto:security@micstura.com">security@micstura.com</a>
+  </p>
+
+  <footer class="doc">
+    &copy; 2026 Micstura LLC. Fisga is a product of Micstura LLC. All rights reserved.
+  </footer>
+</div>
+</body>
+</html>
