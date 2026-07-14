@@ -4,63 +4,82 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Service | Fisga</title>
+<meta name="robots" content="noindex,follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&family=Raleway:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&family=Raleway:wght@200;300;400;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --accent:#EBFC72;
-    --bg:#F7F7F4;
-    --ink:#0A0A0A;
-    --muted:#55564f;
-    --line:#e2e2dc;
-    --maxw:820px;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Plus Jakarta Sans','Raleway',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    line-height:1.65;
-    font-size:16px;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:64px 24px 96px;}
-  header.doc{border-bottom:3px solid var(--accent);padding-bottom:28px;margin-bottom:40px;}
-  .brand{font-family:'Raleway',sans-serif;font-weight:800;letter-spacing:-.02em;font-size:20px;text-transform:lowercase;}
-  .brand a{text-decoration:none;color:inherit;}
-  .brand span{background:var(--accent);padding:0 6px;border-radius:3px;}
-  h1{font-family:'Raleway',sans-serif;font-weight:800;font-size:38px;line-height:1.1;letter-spacing:-.02em;margin:22px 0 10px;}
-  .meta{color:var(--muted);font-size:14px;}
-  h2{font-family:'Raleway',sans-serif;font-weight:700;font-size:22px;margin:44px 0 6px;letter-spacing:-.01em;scroll-margin-top:20px;}
-  h3{font-weight:700;font-size:17px;margin:26px 0 4px;}
-  p,li{color:#1c1d18;}
+  :root{--bg:#F7F7F4;--bg2:#FFFFFF;--bg3:#EFEFEB;--yellow:#EBFC72;--black:#0C0C0A;--mid:#444;--gray:#888;--lgray:#BBBBBB;--border:rgba(0,0,0,0.07);--border2:rgba(0,0,0,0.12);--title:'Raleway',sans-serif;--body:'Plus Jakarta Sans',sans-serif;--maxw:780px;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--black);font-family:var(--body);-webkit-font-smoothing:antialiased;}
+  .doc-nav{position:sticky;top:0;z-index:100;background:rgba(247,247,244,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 6vw;display:flex;align-items:center;justify-content:space-between;height:62px;gap:24px;}
+  .doc-nav-brand{font-family:var(--title);font-weight:800;font-size:18px;letter-spacing:-0.02em;text-transform:lowercase;text-decoration:none;color:var(--black);flex-shrink:0;}
+  .doc-nav-brand span{background:var(--yellow);padding:0 5px;border-radius:2px;}
+  .doc-nav-legal{display:flex;gap:24px;flex:1;justify-content:center;}
+  .doc-nav-legal a{font-family:var(--title);font-size:10px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--lgray);transition:color 0.2s;white-space:nowrap;}
+  .doc-nav-legal a:hover{color:var(--black);}
+  .doc-nav-legal a.active{color:var(--black);}
+  .doc-nav-back{font-family:var(--title);font-size:10px;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;color:var(--mid);display:flex;align-items:center;gap:6px;transition:color 0.2s;flex-shrink:0;}
+  .doc-nav-back:hover{color:var(--black);}
+  .doc-nav-back::before{content:'←';}
+  .doc-wrap{max-width:var(--maxw);margin:0 auto;padding:64px 24px 96px;}
+  .doc-header{border-bottom:3px solid var(--yellow);padding-bottom:28px;margin-bottom:40px;}
+  .doc-eyebrow{font-family:var(--title);font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--lgray);margin-bottom:14px;}
+  h1{font-family:var(--title);font-weight:800;font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px;}
+  .doc-meta{font-size:13px;color:var(--gray);}
+  h2{font-family:var(--title);font-weight:700;font-size:20px;letter-spacing:-0.01em;margin:44px 0 8px;scroll-margin-top:80px;}
+  h3{font-family:var(--body);font-weight:700;font-size:15px;margin:24px 0 4px;color:var(--black);}
+  p{font-size:15px;line-height:1.75;color:var(--mid);margin:12px 0;}
   ul,ol{padding-left:22px;}
-  li{margin:6px 0;}
-  a{color:#0a0a0a;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;}
-  .lead{font-size:17px;color:var(--muted);}
-  .callout{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:16px 20px;margin:22px 0;font-size:15px;}
-  .toc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 26px;margin:32px 0;}
-  .toc h4{margin:0 0 10px;font-family:'Raleway',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:var(--muted);}
-  .toc ol{columns:2;column-gap:32px;font-size:14px;margin:0;}
-  .toc a{text-decoration:none;}
-  .toc a:hover{text-decoration:underline;}
-  strong{font-weight:700;}
-  .upper{text-transform:uppercase;font-size:14px;letter-spacing:.02em;}
-  footer.doc{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-  footer.doc nav{display:flex;gap:20px;flex-wrap:wrap;}
-  footer.doc nav a{color:var(--muted);font-size:13px;text-decoration:none;}
-  footer.doc nav a:hover{text-decoration:underline;}
-  @media(max-width:640px){.toc ol{columns:1;}h1{font-size:30px;}}
+  li{font-size:15px;line-height:1.75;color:var(--mid);margin:6px 0;}
+  a{color:var(--black);text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:2px;}
+  strong{font-weight:600;color:var(--black);}
+  .lead{font-size:16px;line-height:1.8;color:var(--mid);}
+  .callout{background:var(--bg2);border:1px solid var(--border2);border-left:4px solid var(--yellow);border-radius:0 6px 6px 0;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.7;color:var(--mid);}
+  .upper{text-transform:uppercase;font-size:13px;letter-spacing:0.02em;}
+  .toc{background:var(--bg2);border:1px solid var(--border2);border-radius:8px;padding:20px 24px;margin:32px 0;}
+  .toc-label{font-family:var(--title);font-size:9px;letter-spacing:0.35em;text-transform:uppercase;color:var(--lgray);margin-bottom:12px;}
+  .toc ol{columns:2;column-gap:32px;font-size:13px;margin:0;padding-left:18px;}
+  .toc a{text-decoration:none;color:var(--mid);}
+  .toc a:hover{color:var(--black);text-decoration:underline;text-decoration-color:var(--yellow);}
+  .toc li{margin:4px 0;}
+  footer{background:var(--black);padding:80px 6vw 40px;}
+  .foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:60px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:36px;}
+  .foot-tag{font-size:13px;font-weight:300;line-height:1.7;color:rgba(255,255,255,0.6);max-width:260px;margin-top:12px;}
+  .foot-brand{font-family:var(--title);font-weight:800;font-size:20px;letter-spacing:-0.02em;text-transform:lowercase;color:#fff;text-decoration:none;display:inline-block;margin-bottom:4px;}
+  .foot-brand span{background:var(--yellow);color:var(--black);padding:0 5px;border-radius:2px;}
+  .foot-col h4{font-family:var(--title);font-size:9px;letter-spacing:0.3em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:18px;}
+  .foot-col a{font-size:13px;font-weight:300;color:rgba(255,255,255,0.75);text-decoration:none;display:block;margin-bottom:10px;transition:color 0.2s;}
+  .foot-col a:hover{color:#fff;}
+  .foot-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .foot-copy,.foot-us{font-family:var(--title);font-size:9px;letter-spacing:0.15em;color:rgba(255,255,255,0.4);}
+  @media(max-width:1024px){.foot-top{grid-template-columns:1fr 1fr;gap:40px;}.foot-top>div:first-child{grid-column:1/-1;}}
+  @media(max-width:768px){
+    .doc-nav{padding:0 20px;}.doc-nav-legal{display:none;}
+    .doc-wrap{padding:48px 20px 80px;}.toc ol{columns:1;}
+    footer{padding:60px 24px 32px;}.foot-top{grid-template-columns:1fr;gap:40px;padding-bottom:40px;}
+    .foot-bot{flex-direction:column;gap:8px;text-align:center;}
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="doc">
-    <div class="brand"><a href="/"><span>fisga</span></a></div>
+
+<nav class="doc-nav">
+  <a class="doc-nav-brand" href="/"><span>fisga</span></a>
+  <div class="doc-nav-legal">
+    <a href="/terms-of-service" class="active">Terms of Service</a>
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/data-use">Data Use &amp; Processing</a>
+  </div>
+  <a class="doc-nav-back" href="/">Back to site</a>
+</nav>
+
+<div class="doc-wrap">
+  <div class="doc-header">
+    <div class="doc-eyebrow">Legal</div>
     <h1>Terms of Service</h1>
-    <div class="meta">Effective date: July 14, 2026 &nbsp;•&nbsp; Last updated: July 14, 2026</div>
-  </header>
+    <p class="doc-meta">Effective date: July 14, 2026 &nbsp;·&nbsp; Last updated: July 14, 2026</p>
+  </div>
 
   <p class="lead">These Terms of Service govern your access to and use of the Fisga platform and related services operated by Micstura LLC. Please read them carefully. By using the Service, you agree to these Terms.</p>
 
@@ -69,7 +88,7 @@
   </div>
 
   <div class="toc">
-    <h4>Contents</h4>
+    <div class="toc-label">Contents</div>
     <ol>
       <li><a href="#s1">Agreement to Terms</a></li>
       <li><a href="#s2">Eligibility and Authority</a></li>
@@ -156,10 +175,11 @@
   <h3>8.1 Reporting infringement</h3>
   <p>If you believe material on the Service infringes your copyright, send a written notice to our Designated Agent that includes: (1) a physical or electronic signature of the copyright owner or a person authorized to act on their behalf; (2) identification of the copyrighted work claimed to be infringed; (3) identification of the material claimed to be infringing and information reasonably sufficient to let us locate it; (4) your contact information; (5) a statement that you have a good-faith belief the use is not authorized by the copyright owner, its agent, or the law; and (6) a statement, under penalty of perjury, that the information in the notice is accurate and that you are the owner or are authorized to act on the owner's behalf.</p>
   <h3>8.2 Designated Agent</h3>
-  <p>
-    DMCA Agent, Micstura LLC<br>
-    Email: <a href="mailto:dmca@micstura.com">dmca@micstura.com</a>
-  </p>
+  <p>DMCA Agent, Micstura LLC<br>
+  2720 S W Temple St<br>
+  South Salt Lake, UT 84115<br>
+  United States<br>
+  Email: <a href="mailto:dmca@micstura.com">dmca@micstura.com</a></p>
   <h3>8.3 Counter-notification</h3>
   <p>If your material was removed, you may submit a counter-notice containing: (1) your signature; (2) identification of the removed material and its prior location; (3) a statement under penalty of perjury that you have a good-faith belief the material was removed by mistake or misidentification; and (4) your name, address, and phone number, your consent to the jurisdiction of the federal court for your district (or, if outside the United States, any district in which we may be found), and your acceptance of service of process from the party who filed the original notice. If we receive a valid counter-notice, we may restore the material in 10 to 14 business days unless the original complainant files a court action.</p>
   <h3>8.4 Repeat infringers</h3>
@@ -227,21 +247,46 @@
   <p><strong>Relationship.</strong> The parties are independent contractors. These Terms create no partnership, agency, or employment relationship.</p>
 
   <h2 id="s20">20. Contact</h2>
-  <p>
-    Micstura LLC<br>
-    Salt Lake City, Utah<br>
-    General: <a href="mailto:legal@micstura.com">legal@micstura.com</a><br>
-    Copyright/DMCA: <a href="mailto:dmca@micstura.com">dmca@micstura.com</a>
-  </p>
+  <p>Micstura LLC<br>
+  2720 S W Temple St<br>
+  South Salt Lake, UT 84115<br>
+  United States<br>
+  General: <a href="mailto:legal@micstura.com">legal@micstura.com</a><br>
+  Copyright/DMCA: <a href="mailto:dmca@micstura.com">dmca@micstura.com</a></p>
+</div>
 
-  <footer class="doc">
-    <span>&copy; 2026 Micstura LLC. Fisga is a product of Micstura LLC. All rights reserved.</span>
-    <nav>
+<footer>
+  <div class="foot-top">
+    <div>
+      <a class="foot-brand" href="/"><span>fisga</span></a>
+      <p class="foot-tag">Decision intelligence grounded in federal data. Results in minutes, not months.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Output Types</h4>
+      <a href="/#types">Market Readiness</a>
+      <a href="/#types">Pricing Intelligence</a>
+      <a href="/#types">Audience Map</a>
+      <a href="/#types">Concept Clarity</a>
+      <a href="/#types">Story Fit</a>
+      <a href="/#types">Growth Map</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <a href="mailto:hello@fisga.co">hello@fisga.co</a>
+      <a href="https://www.linkedin.com/company/fisga-ai-insights/" target="_blank">LinkedIn ↗</a>
+    </div>
+    <div class="foot-col">
+      <h4>Legal</h4>
       <a href="/terms-of-service">Terms of Service</a>
       <a href="/privacy-policy">Privacy Policy</a>
       <a href="/data-use">Data Use &amp; Processing</a>
-    </nav>
-  </footer>
-</div>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <p class="foot-copy">© 2026 Micstura LLC. Fisga is a product of Micstura LLC.</p>
+    <p class="foot-us">Currently serving US-based CPG and operator teams.</p>
+  </div>
+</footer>
+
 </body>
 </html>
