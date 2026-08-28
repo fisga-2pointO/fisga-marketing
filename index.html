@@ -438,19 +438,19 @@ nav.on-dark .nav-links a:hover{color:#fff}
 
 /* TEAM — light */
 #team{background:var(--bg3);padding:120px 6vw}
-.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);margin:64px auto 0;max-width:860px}
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);margin:64px 0 0}
 .team-card{background:var(--bg2);overflow:hidden;transition:background 0.3s}
 .team-card:hover{background:#fff}
-.team-portrait{height:320px;position:relative;overflow:hidden;background:#1a1a18}
+.team-portrait{height:460px;position:relative;overflow:hidden;background:#1a1a18}
 .team-portrait img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);filter:grayscale(15%)}
 .team-card:hover .team-portrait img{transform:scale(1.03)}
 
-.team-body{padding:36px 36px 44px}
+.team-body{padding:48px 52px 56px}
 .t-init{display:none}
-.t-name{font-family:var(--title);font-size:20px;font-weight:200;letter-spacing:0.01em;color:var(--black);margin-bottom:4px}
-.t-title{font-family:var(--title);font-size:9px;letter-spacing:0.3em;color:var(--lgray);text-transform:uppercase;margin-bottom:20px}
-.t-bio{font-size:13px;font-weight:400;line-height:1.85;color:rgba(0,0,0,0.45);margin-bottom:24px}
-.t-person-quote{font-family:var(--title);font-size:13px;font-weight:200;font-style:italic;line-height:1.6;color:rgba(0,0,0,0.5);border-left:2px solid var(--yellow);padding-left:16px}
+.t-name{font-family:var(--title);font-size:26px;font-weight:200;letter-spacing:0.01em;color:var(--black);margin-bottom:6px}
+.t-title{font-family:var(--title);font-size:10px;letter-spacing:0.3em;color:var(--lgray);text-transform:uppercase;margin-bottom:24px}
+.t-bio{font-size:15px;font-weight:400;line-height:1.85;color:rgba(0,0,0,0.45);margin-bottom:28px;max-width:56ch}
+.t-person-quote{font-family:var(--title);font-size:16px;font-weight:200;font-style:italic;line-height:1.6;color:rgba(0,0,0,0.5);border-left:2px solid var(--yellow);padding-left:18px;max-width:52ch}
 
 /* INVESTOR — white */
 #invest{background:var(--bg2);padding:120px 6vw}
@@ -590,6 +590,8 @@ footer{background:var(--black);padding:80px 6vw 40px}
   #team{padding:80px 24px}
   .team-grid{grid-template-columns:1fr;gap:2px}
   .team-portrait{height:280px}
+  .team-body{padding:36px 28px 40px}
+  .t-name{font-size:22px}
 
   /* Investor */
   #invest{padding:80px 24px}
