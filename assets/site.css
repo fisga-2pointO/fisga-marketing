@@ -1,0 +1,118 @@
+/* Shared styles for content pages: /faq, /learn, /about, /methodology, /case-studies.
+   Matches the homepage palette and type. No JavaScript required. */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#F7F7F4;
+  --bg2:#FFFFFF;
+  --bg3:#EFEFEB;
+  --yellow:#EBFC72;
+  --black:#0C0C0A;
+  --mid:#444;
+  --gray:#6b6b6b;
+  --border:rgba(0,0,0,0.07);
+  --border2:rgba(0,0,0,0.12);
+  --title:'Raleway',sans-serif;
+  --body:'Plus Jakarta Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--black);font-family:var(--body);-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+
+/* NAV */
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(247,247,244,0.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:18px 6vw;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.site-nav .logo img{height:24px;width:auto}
+.site-nav ul{display:flex;gap:28px;list-style:none;align-items:center;flex-wrap:wrap}
+.site-nav ul a{font-family:var(--title);font-size:11px;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;color:var(--mid)}
+.site-nav ul a:hover,.site-nav ul a[aria-current="page"]{color:var(--black)}
+.site-nav ul a[aria-current="page"]{border-bottom:1px solid var(--black);padding-bottom:3px}
+.site-nav .nav-btn{background:var(--yellow);color:var(--black);padding:10px 20px;font-size:10px;letter-spacing:0.16em}
+@media(max-width:768px){.site-nav{padding:14px 20px}.site-nav ul{gap:14px 18px}.site-nav ul a{font-size:10px}}
+
+/* LAYOUT */
+.page{max-width:1200px;margin:0 auto;padding:96px 6vw 120px}
+.narrow{max-width:760px}
+.eyebrow{font-family:var(--title);font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:var(--mid);display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--mid)}
+h1{font-family:var(--title);font-weight:200;font-size:clamp(36px,5vw,64px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:28px}
+h1 em{font-style:italic;color:rgba(0,0,0,0.35)}
+.lede{font-size:19px;line-height:1.75;color:rgba(0,0,0,0.65);max-width:680px}
+h2{font-family:var(--title);font-weight:300;font-size:clamp(26px,3vw,36px);line-height:1.15;letter-spacing:-0.01em;margin:72px 0 24px}
+h3{font-family:var(--title);font-weight:400;font-size:20px;line-height:1.3;margin:36px 0 12px}
+.prose p,.prose li{font-size:17px;line-height:1.85;color:rgba(0,0,0,0.72)}
+.prose p{margin-bottom:20px}
+.prose ul,.prose ol{margin:0 0 24px 22px}
+.prose li{margin-bottom:8px}
+.prose a{text-decoration:underline;text-decoration-color:var(--border2);text-underline-offset:3px}
+.prose a:hover{text-decoration-color:var(--black)}
+.prose strong{font-weight:600;color:var(--black)}
+.prose blockquote{border-left:3px solid var(--yellow);padding-left:20px;margin:28px 0;font-family:var(--title);font-size:20px;font-weight:300;font-style:italic;color:rgba(0,0,0,0.65)}
+.muted{color:var(--gray)}
+
+/* PLACEHOLDER (copy not written yet) */
+.placeholder{background:repeating-linear-gradient(-45deg,#fffbe0,#fffbe0 10px,#fff7c2 10px,#fff7c2 20px);border:1px dashed #c8b400;padding:20px 24px;margin:20px 0;font-size:15px;color:#5a5000}
+.placeholder strong{display:block;font-family:var(--title);font-size:10px;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:6px}
+
+/* ARTICLE META */
+.byline{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--gray);margin:8px 0 48px;padding:18px 0;border-top:1px solid var(--border2);border-bottom:1px solid var(--border2)}
+.byline img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.byline a{color:var(--black);font-weight:500;text-decoration:none;border-bottom:1px solid var(--border2)}
+.byline a:hover{border-bottom-color:var(--black)}
+.byline .sep{color:var(--border2)}
+.answer-box{background:var(--bg2);border-left:3px solid var(--yellow);padding:24px 28px;margin:0 0 40px}
+.answer-box p{margin:0;font-size:18px;color:var(--black)}
+
+/* FAQ */
+.faq-list{display:grid;gap:2px;background:var(--border);margin-top:24px}
+.faq-item{background:var(--bg2);padding:32px 36px}
+.faq-item .faq-q{font-family:var(--title);font-size:19px;font-weight:400;line-height:1.35;margin:0 0 12px}
+.faq-item .faq-a p{font-size:16px;line-height:1.85;color:rgba(0,0,0,0.65)}
+@media(max-width:768px){.faq-item{padding:26px 22px}}
+
+/* CARDS (learn index, related, case studies) */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2px;background:var(--border);margin-top:40px}
+.card{background:var(--bg2);padding:32px 30px;text-decoration:none;display:flex;flex-direction:column;gap:12px;position:relative;transition:background .3s}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.card:hover::before{transform:scaleX(1)}
+.card-tag{font-family:var(--title);font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray)}
+.card-title{font-family:var(--title);font-size:21px;font-weight:300;line-height:1.25;color:var(--black)}
+.card-text{font-size:14px;line-height:1.7;color:rgba(0,0,0,0.6)}
+.card-cta{margin-top:auto;font-family:var(--title);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--black)}
+.empty{background:var(--bg2);padding:40px;margin-top:40px;color:var(--gray);font-size:16px}
+.related{margin-top:96px;padding-top:48px;border-top:1px solid var(--border2)}
+.related h2{margin-top:0}
+
+/* PERSON */
+.person{display:grid;grid-template-columns:320px 1fr;gap:64px;align-items:start}
+.person img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(15%)}
+.person .role{font-family:var(--title);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray);margin:-12px 0 28px}
+.facts{list-style:none;margin:32px 0;padding:0;border-top:1px solid var(--border2)}
+.facts li{padding:14px 0;border-bottom:1px solid var(--border2);font-size:15px;display:grid;grid-template-columns:140px 1fr;gap:16px}
+.facts li span:first-child{font-family:var(--title);font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray);padding-top:3px}
+.btn{display:inline-block;background:var(--black);color:#fff;text-decoration:none;padding:14px 28px;font-family:var(--title);font-size:10px;letter-spacing:0.18em;text-transform:uppercase}
+.btn:hover{background:#222}
+@media(max-width:860px){.person{grid-template-columns:1fr;gap:32px}.person img{max-width:320px}}
+
+/* CTA BAND */
+.cta-band{background:var(--yellow);padding:72px 6vw}
+.cta-band .inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.cta-band p{font-family:var(--title);font-size:clamp(24px,3vw,36px);font-weight:200;line-height:1.15;max-width:640px}
+
+/* FOOTER */
+.site-foot{background:var(--black);color:rgba(255,255,255,0.8);padding:72px 6vw 36px}
+.site-foot .top{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.15)}
+.site-foot img{height:26px;width:auto;margin-bottom:18px}
+.site-foot p{font-size:13px;font-weight:300;line-height:1.7;max-width:260px}
+.site-foot h4{font-family:var(--title);font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:16px;font-weight:400}
+.site-foot a{display:block;font-size:13px;font-weight:300;text-decoration:none;margin-bottom:10px;color:rgba(255,255,255,0.8)}
+.site-foot a:hover{color:#fff}
+.site-foot .bot{max-width:1200px;margin:28px auto 0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--title);font-size:9px;letter-spacing:0.15em;color:rgba(255,255,255,0.65)}
+@media(max-width:860px){.site-foot .top{grid-template-columns:1fr 1fr}.page{padding:64px 20px 88px}}
+@media(max-width:520px){.site-foot .top{grid-template-columns:1fr}}
+
+/* Overrides for elements that sit inside .prose */
+.prose .eyebrow{font-size:10px;line-height:1.6;color:var(--mid);margin-bottom:20px}
+.prose .facts{margin-left:0}
+.prose .facts li{margin-bottom:0}
+.answer-box .placeholder{margin:0;font-size:15px;color:#5a5000}
+@media(max-width:600px){.byline{gap:6px 14px}.byline .sep{display:none}}

@@ -1,0 +1,27 @@
+# Fisga
+
+> Fisga is a decision intelligence and market research platform for CPG brands, operators and founders. It answers pricing, positioning, feasibility, concept testing and segmentation questions in minutes, grounded in U.S. federal data. Fisga is based in Salt Lake City, Utah, and was founded by Eduardo Henriques.
+
+Every Fisga finding traces to a named public government dataset. Studies typically run in under 20 minutes, compared with six to eight weeks for traditional research. Contact: hello@fisga.co.
+
+## Start here
+
+- [Fisga home](https://www.fisga.co/): What Fisga is, how it works, the five study types, real findings, the team and the most common buyer questions.
+- [Case studies](https://www.fisga.co/case-studies): Five real Fisga studies: a go-to-market and pricing decision, a plant-based launch, a museum exhibition booking, a pet CPG market entry and a fintech concept test.
+- [Frequently asked questions](https://www.fisga.co/faq): Answers to 15 common questions about pricing, feasibility, segmentation, positioning and concept testing, and how Fisga answers them in minutes with U.S. federal data.
+
+## Case studies
+
+- [How Fisga Found the Trust Gap in a Fintech Concept Before Launch](https://www.fisga.co/case-studies/concept-testing-card-dial-rewards): Card Dial rewards app: 9 in 10 liked the concept but only 4 in 10 believed it. Trust in manually entered data, not privacy, was the barrier to fix before launch.
+- [How Fisga De-Risked a Museum's Marquee Exhibition Booking in 11 Minutes](https://www.fisga.co/case-studies/concept-testing-nhmu-traveling-exhibition): Natural History Museum of Utah: which traveling exhibition to book. Hands-on science was the top must-have for families, and the right booking adds 8,000 to 18,000 paid visits.
+- [How Fisga Identified the Right CPG Buyer for ElectroDog®'s U.S. Market Entry](https://www.fisga.co/case-studies/cpg-segmentation-electrodog-usa): ElectroDog® U.S. launch: 92.2% appeal but 10.4% believability, two Southern California launch segments, and a $3.99 launch price.
+- [How Fisga Answered a $3M Go-to-Market Decision in 16 Minutes](https://www.fisga.co/case-studies/go-to-market-pricing-porsche-912): Einstieg, which restores Porsche 912s: regional co-selling beat a national direct campaign, and the comfortable price ceiling was about $73,000, not the planned $85,000. Answered in 16 minutes.
+- [How Fisga Delivered a Plant-Based Launch Decision for Verdant Foods](https://www.fisga.co/case-studies/plant-based-verdant-foods-launch): Verdant Foods plant-based launch: 68.8% high purchase intent, a realistic 20% to 35% trial rate, meat-reducers as the primary target and $6.99 as the launch price.
+
+## Learn
+
+- [Learn](https://www.fisga.co/learn): Articles that answer one buyer question each about pricing, positioning, segmentation, feasibility and concept testing.
+
+## Optional
+
+- [Request early access](https://www.fisga.co/early-access): Request early access to Fisga, the decision intelligence platform that answers pricing, positioning and market entry questions in minutes, grounded in U.S. federal data.

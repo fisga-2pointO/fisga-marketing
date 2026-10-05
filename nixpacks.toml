@@ -1,5 +1,10 @@
 [phases.setup]
 nixPkgs = ["python3"]
 
+# Regenerate sitemap.xml, llms.txt and the generated JSON-LD on every deploy.
+# Fails the deploy if any structured data is invalid.
+[phases.build]
+cmds = ["python3 scripts/build_seo.py"]
+
 [start]
 cmd = "python3 server.py"
