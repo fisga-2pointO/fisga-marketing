@@ -43,7 +43,7 @@ COPY_RULES = [
     ("CDC", "named federal agency"),
     ("USDA", "named federal agency"),
 ]
-COPY_RULE_PATHS = ("faq.html", "methodology.html", "learn/", "about/", "case-studies/index.html")
+COPY_RULE_PATHS = ("faq.html", "methodology.html", "learn/", "about/", "case-studies/")
 
 errors, warnings = [], []
 
