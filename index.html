@@ -422,6 +422,7 @@ nav.on-dark .nav-links a:hover{color:#fff}
 .proof-head{padding:0 6vw 56px}
 .proof-head .sec-h{margin-bottom:0}
 .proof-track{display:flex;gap:2px;padding:0 6vw 80px;width:max-content}
+.proof-all{padding:0 6vw 110px}
 .proof-card{width:380px;flex-shrink:0;background:var(--bg);border:1px solid var(--border);overflow:hidden;transition:border-color 0.3s,transform 0.35s cubic-bezier(0.16,1,0.3,1);display:flex;flex-direction:column}
 .proof-card:hover{border-color:var(--border2);transform:translateY(-8px)}
 .proof-img{height:140px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:12px}
@@ -434,6 +435,8 @@ nav.on-dark .nav-links a:hover{color:#fff}
 .img-pet{background-image:url('ElectroDog-hero.png');background-size:cover;background-position:center 40%}
 .img-plant{background-image:url('Fisga-PlantBase-CaseStudy.png');background-size:cover;background-position:center 25%}
 .img-cards{background-image:url('CardDial-CaseStudy.jpg');background-size:cover;background-position:center}
+.img-cookie{background-image:url('case-studies/images/cookie-hero.jpg');background-size:cover;background-position:center}
+.img-telehealth{background-image:url('case-studies/images/telehealth-hero.jpg');background-size:cover;background-position:center}
 .proof-body{padding:20px 24px 24px;display:flex;flex-direction:column;flex:1}
 .proof-tag{font-family:var(--title);font-size:8px;letter-spacing:0.3em;color:var(--lgray);text-transform:uppercase;margin-bottom:10px}
 .proof-card h3{font-family:var(--title);font-size:17px;font-weight:200;line-height:1.25;letter-spacing:-0.01em;color:var(--black);margin-bottom:10px}
@@ -622,6 +625,7 @@ footer{background:var(--black);padding:80px 6vw 40px}
   .proof-track-wrap{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .proof-track-wrap::-webkit-scrollbar{display:none}
   .proof-track{padding:0 24px 60px;gap:16px}
+  .proof-all{padding:0 24px 72px}
   .proof-card{width:300px}
 
   /* Types */
@@ -1050,6 +1054,30 @@ nav{opacity:1}
   </div>
   <div class="proof-track-wrap">
     <div class="proof-track" id="proofTrack">
+      <a class="proof-card reveal" href="/case-studies/concept-testing-cookie-launch-denver-boise">
+        <div class="proof-img img-cookie">
+          <span class="proof-img-label">Packaged Food · Denver + Boise</span>
+        </div>
+        <div class="proof-body">
+          <div class="proof-tag">Concept Testing · Packaged Food</div>
+          <h3>People loved the cookie delivery idea. They chose the grocery pack.</h3>
+          <p>72% chose the grocery pack over warm cookies delivered to the door.</p>
+          <div class="proof-src">Grounded in federal data</div>
+          <span class="proof-cta">View Case Study →</span>
+        </div>
+      </a>
+      <a class="proof-card reveal" href="/case-studies/concept-testing-telehealth-membership-houston-nashville">
+        <div class="proof-img img-telehealth">
+          <span class="proof-img-label">Health Membership · Houston + Nashville</span>
+        </div>
+        <div class="proof-body">
+          <div class="proof-tag">Concept Testing · Health Membership</div>
+          <h3>Parents liked both telehealth plans. Most would only pay for one.</h3>
+          <p>90% liked the plan for one person. Only 13% would pay for it.</p>
+          <div class="proof-src">Grounded in federal data</div>
+          <span class="proof-cta">View Case Study →</span>
+        </div>
+      </a>
       <a class="proof-card reveal" href="/case-studies/go-to-market-pricing-porsche-912">
         <div class="proof-img img-auto">
           <span class="proof-img-label">Premium Automotive</span>
@@ -1111,6 +1139,9 @@ nav{opacity:1}
         </div>
       </a>
     </div>
+  </div>
+  <div class="proof-all reveal">
+    <a href="/case-studies" class="btn-y">View all case studies</a>
   </div>
 </section>
 
